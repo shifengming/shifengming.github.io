@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue3.0新特性 | ming的个人网站</title>
+    <meta name="description" content="Welcome to come to my blog">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.70f2d267.css" as="style"><link rel="preload" href="/assets/js/app.f3f0b164.js" as="script"><link rel="preload" href="/assets/js/2.284f78c8.js" as="script"><link rel="preload" href="/assets/js/38.ce143c7c.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bd6822.js"><link rel="prefetch" href="/assets/js/11.7be908fe.js"><link rel="prefetch" href="/assets/js/12.71222861.js"><link rel="prefetch" href="/assets/js/13.0e9f2f34.js"><link rel="prefetch" href="/assets/js/14.70e31408.js"><link rel="prefetch" href="/assets/js/15.8e83af5f.js"><link rel="prefetch" href="/assets/js/16.3f82f6aa.js"><link rel="prefetch" href="/assets/js/17.9c893c24.js"><link rel="prefetch" href="/assets/js/18.8ce12f88.js"><link rel="prefetch" href="/assets/js/19.4539c1e6.js"><link rel="prefetch" href="/assets/js/20.8d6b15a2.js"><link rel="prefetch" href="/assets/js/21.aa90be3e.js"><link rel="prefetch" href="/assets/js/22.0741e8cf.js"><link rel="prefetch" href="/assets/js/23.26e38199.js"><link rel="prefetch" href="/assets/js/24.437832b0.js"><link rel="prefetch" href="/assets/js/25.3ac7a3f9.js"><link rel="prefetch" href="/assets/js/26.f3036c64.js"><link rel="prefetch" href="/assets/js/27.85d3ca2e.js"><link rel="prefetch" href="/assets/js/28.f59e28e7.js"><link rel="prefetch" href="/assets/js/29.74627ca0.js"><link rel="prefetch" href="/assets/js/3.c17543fc.js"><link rel="prefetch" href="/assets/js/30.7b42eae2.js"><link rel="prefetch" href="/assets/js/31.9c88f4b6.js"><link rel="prefetch" href="/assets/js/32.3302434b.js"><link rel="prefetch" href="/assets/js/33.bd99df5c.js"><link rel="prefetch" href="/assets/js/34.a20acac1.js"><link rel="prefetch" href="/assets/js/35.d2d4f756.js"><link rel="prefetch" href="/assets/js/36.18286c43.js"><link rel="prefetch" href="/assets/js/37.84831a8a.js"><link rel="prefetch" href="/assets/js/39.11e44bd7.js"><link rel="prefetch" href="/assets/js/4.24ba765a.js"><link rel="prefetch" href="/assets/js/40.cb8f8018.js"><link rel="prefetch" href="/assets/js/41.f6a28df9.js"><link rel="prefetch" href="/assets/js/42.fbd48b3c.js"><link rel="prefetch" href="/assets/js/43.131d6d97.js"><link rel="prefetch" href="/assets/js/44.2c119204.js"><link rel="prefetch" href="/assets/js/45.198a5b50.js"><link rel="prefetch" href="/assets/js/46.c2f0e139.js"><link rel="prefetch" href="/assets/js/47.71dfa535.js"><link rel="prefetch" href="/assets/js/48.cb8ad619.js"><link rel="prefetch" href="/assets/js/49.cbeee829.js"><link rel="prefetch" href="/assets/js/5.e87ba801.js"><link rel="prefetch" href="/assets/js/50.ff87b9b9.js"><link rel="prefetch" href="/assets/js/51.8943f310.js"><link rel="prefetch" href="/assets/js/52.f08a077e.js"><link rel="prefetch" href="/assets/js/53.5b096969.js"><link rel="prefetch" href="/assets/js/54.39e8487d.js"><link rel="prefetch" href="/assets/js/55.581e549d.js"><link rel="prefetch" href="/assets/js/56.d60cbfa0.js"><link rel="prefetch" href="/assets/js/6.b35a0751.js"><link rel="prefetch" href="/assets/js/7.aa04d747.js"><link rel="prefetch" href="/assets/js/8.2805aa08.js"><link rel="prefetch" href="/assets/js/9.2159abe2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.70f2d267.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ming的个人网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page6/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page6/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS3</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JQuery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/page6/vue生命周期.html" class="sidebar-link">vue生命周期</a></li><li><a href="/page6/手写一个MVVM框架.html" class="sidebar-link">手写一个MVVM框架</a></li><li><a href="/page6/常用指令.html" class="sidebar-link">常用指令</a></li><li><a href="/page6/组件常用选项.html" class="sidebar-link">组件常用选项</a></li><li><a href="/page6/组件之间的通信.html" class="sidebar-link">组件之间的通信</a></li><li><a href="/page6/vuex的用法.html" class="sidebar-link">vuex的用法</a></li><li><a href="/page6/vue3.0新特性.html" class="active sidebar-link">Vue3.0新特性</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#vue3-0简介" class="sidebar-link">vue3.0简介</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#初始化项目" class="sidebar-link">初始化项目</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#安装一些新特性的api" class="sidebar-link">安装一些新特性的API</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#setup" class="sidebar-link">setup</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#接受props数据" class="sidebar-link">接受props数据</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#context" class="sidebar-link">context</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#reactive" class="sidebar-link">reactive</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#ref" class="sidebar-link">ref</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#isref" class="sidebar-link">isRef</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#torefs" class="sidebar-link">toRefs</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#computed" class="sidebar-link">computed</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#watch" class="sidebar-link">watch</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#生命周期" class="sidebar-link">生命周期</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#provide-inject" class="sidebar-link">provide&amp;inject</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#ref引用dom元素和组件实例" class="sidebar-link">ref引用DOM元素和组件实例</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#createcomponent" class="sidebar-link">createComponent</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#nexttick的作用" class="sidebar-link">$nextTick的作用</a></li><li class="sidebar-sub-header"><a href="/page6/vue3.0新特性.html#实现响应式源码" class="sidebar-link">实现响应式源码</a></li></ul></li><li><a href="/page6/题目.html" class="sidebar-link">题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Http请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue3-0新特性"><a href="#vue3-0新特性" class="header-anchor">#</a> Vue3.0新特性</h1> <h2 id="vue3-0简介"><a href="#vue3-0简介" class="header-anchor">#</a> vue3.0简介</h2> <p>可以查看网址</p> <div class="language- extra-class"><pre class="language-text"><code>https://www.liulongbin.top/
+</code></pre></div><h2 id="初始化项目"><a href="#初始化项目" class="header-anchor">#</a> 初始化项目</h2> <blockquote><p>检查 node 环境配置</p></blockquote> <p>先本地全局安装node环境，vue的运行是依赖于<code>node</code>的<code>npm</code>的管理工具来实现的，<a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">node下载地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。下载好node之后，打开cmd管理工具，输入<code>node -v</code>，回车，查看node版本号，出现版本号则说明安装成功，注意：node 的版本要在 8.9  或更高版本 (推荐 8.11.0+)</p> <div class="language- extra-class"><pre class="language-text"><code>node -v  npm -v
+</code></pre></div><blockquote><p>Vue 版本</p></blockquote> <ul><li>关于旧版本</li></ul> <p>如果你已经全局安装了旧版本的 vue-cli (1.x 或 2.x)，你需要先通过 npm uninstall vue-cli -g 或 yarn global remove vue-cli 卸载它, Vue CLI 的包名称由 vue-cli 改成了 @vue/cli。</p> <ul><li>安装新版本</li></ul> <div class="language- extra-class"><pre class="language-text"><code>npm install -g @vue/cli
+# OR
+yarn global add @vue/cli
+</code></pre></div><ul><li>查看版本</li></ul> <div class="language- extra-class"><pre class="language-text"><code>vue --version | vue -V
+</code></pre></div><blockquote><p>创建项目</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>vue create mc-ui
+OR
+vue ui 也可以使用UI图形化界面创建项目
+</code></pre></div><p>注意：由于我们是开发一个第三方依赖库，我们选择 Manually select features。</p> <ol><li>选择那些特性需要安装在项目中</li></ol> <div class="language- extra-class"><pre class="language-text"><code> (*) Babel
+ ( ) TypeScript
+ ( ) Progressive Web App (PWA) Support
+ ( ) Router
+ ( ) Vuex
+ (*) CSS Pre-processors
+ (*) Linter / Formatter
+ ( ) Unit Testing
+ ( ) E2E Testing
+</code></pre></div><p>系统默认的包含了基本的 Babel + ESLint 设置的 preset，我们只需要选择CSS配置。移动键盘上下键选择需要的特性，按下键盘空格键即可选中</p> <ol start="2"><li>安装哪一种 CSS 预处理语言</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  Sass/SCSS (with dart-sass)
+  Sass/SCSS (with node-sass)
+  Less
+  Stylus
+</code></pre></div><p>由于Element UI中的样式采用Sass，所以我们选择第一项即可
+为什么不选择第二项呢？
+因为dart-sass比node-sass更好下载</p> <ol start="3"><li>选择代码风格</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  ESLint with error prevention only
+  ESLint + Airbnb config
+  ESLint + Standard config
+  ESLint + Prettier
+</code></pre></div><p>因个人喜好选择即可，我比较喜欢第三种</p> <ol start="4"><li>那种方式进行代码格式检测</li></ol> <div class="language- extra-class"><pre class="language-text"><code> (*) Lint on save
+ ( ) Lint and fix on commit
+</code></pre></div><p>选择Ctrl+S保存时检测代码格式即可</p> <ol start="5"><li>配置文件生成方式</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  In dedicated config files
+  In package.json
+</code></pre></div><p>因个人喜好，我比较喜欢选择第二种</p> <ol start="6"><li>是否保存预配置</li></ol> <div class="language- extra-class"><pre class="language-text"><code>Save this as a preset for future projects? (y/N)
+</code></pre></div><p>看项目需要，我这里选择 N。回车后，系统会自动帮我们把选择的配置集成到模板中，然后生成一个完整的项目。</p> <h2 id="安装一些新特性的api"><a href="#安装一些新特性的api" class="header-anchor">#</a> 安装一些新特性的API</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install @vue/composition-api --save
+</code></pre></div><p>然后再到main.js里面引入</p> <div class="language- extra-class"><pre class="language-text"><code>import VueCompositionAPI from '@vue/composition-api'
+
+Vue.use(VueCompositionAPI)
+</code></pre></div><h2 id="setup"><a href="#setup" class="header-anchor">#</a> setup</h2> <p>setup() 函数是 vue3 中，专门为组件提供的新属性。它为我们使用 vue3 的 Composition API 新特性提供了统一的入口</p> <p>setup 函数会在 beforeCreate 之后、created 之前执行</p> <h3 id="编写代码实践"><a href="#编写代码实践" class="header-anchor">#</a> 编写代码实践</h3> <p>App.vue</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;com-setup&gt;&lt;/com-setup&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import SetUpCom from './components/setup.vue'
+export default {
+  name: 'App',
+  components: {
+    'com-setup':SetUpCom
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>setup.vue</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    import {} from '@vue/composition-api'
+
+    export default{
+        setup(){
+            console.log('setup')
+        },
+        beforeCreate(){
+            console.log('beforeCreate')
+        },
+        created(){
+            console.log('created')
+        }
+    }
+&lt;/script&gt;
+</code></pre></div><p>运行的结果</p> <div class="language- extra-class"><pre class="language-text"><code>beforeCreate
+setup
+created
+</code></pre></div><h2 id="接受props数据"><a href="#接受props数据" class="header-anchor">#</a> 接受props数据</h2> <p>setup.vue</p> <p>在 props 中定义当前组件允许外界传递过来的参数名称</p> <div class="language- extra-class"><pre class="language-text"><code>props:{
+	p1: String
+}
+</code></pre></div><p>通过 setup 函数的第一个形参，接收 props 数据</p> <div class="language- extra-class"><pre class="language-text"><code>setup(props){
+            console.log('setup')
+            console.log(props)
+        },
+</code></pre></div><p>App.vue</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;com-setup p1=&quot;aaaaa&quot;&gt;&lt;/com-setup&gt;
+</code></pre></div><p><img src="http://r.photo.store.qq.com/psc?/V121VjTP2yfy1N/uMeul31pGB4ZvQm8Ou4xcWEoVT6LfDP6fSpEQTpXimhF2VEP9pkdICwW56RnRsQHMb2j1BpxQgOG3OXoRda8Mc7i4bl7zDuuAF6iVkB*gpo!/r" alt=""></p> <h2 id="context"><a href="#context" class="header-anchor">#</a> context</h2> <p>setup 函数的第二个形参是一个上下文对象，这个上下文对象中包含了一些有用的属性，这些属性在 vue 2.x 中需要通过 this 才能访问到，在 vue 3.x 中，它们的访问方式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>        setup(props,ctx){
+            console.log('setup')
+            console.log(ctx)
+        },
+</code></pre></div><p><img src="http://r.photo.store.qq.com/psc?/V121VjTP2yfy1N/uMeul31pGB4ZvQm8Ou4xcYJpxItuRUqyV7ScuY8XUQPI4e*tqpI1jzZEWoavHU24iFOsPW*JIaQ6YKkLlfnyjq5*cATUibwxlYL7*IasQJw!/r" alt=""></p> <h2 id="reactive"><a href="#reactive" class="header-anchor">#</a> reactive</h2> <p>reactive()函数接收一个普通对象，返回一个响应式的数据对象</p> <p>components/setup.vue</p> <div class="language- extra-class"><pre class="language-text"><code>    &lt;div&gt;
+        &lt;p&gt;count值为{{count}}&lt;/p&gt;
+        &lt;button @click=&quot;count+=1&quot;&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+    
+    import {reactive} from '@vue/composition-api'
+    export default{
+        setup(props,ctx){
+            console.log(ctx)
+            console.log(props)
+            const state = reactive({count: 0})
+            return state
+        },
+      } 
+</code></pre></div><p><img src="http://r.photo.store.qq.com/psc?/V121VjTP2yfy1N/uMeul31pGB4ZvQm8Ou4xccDWfLne3rlzz*JKlHU*cKOfeCiW47hnpVb36tR0Zzmfe4J1p3FHxnEuReWAcCQJNpXesbO81GJ1Fvs457yYnW4!/r" alt=""></p> <h2 id="ref"><a href="#ref" class="header-anchor">#</a> ref</h2> <p>ref() 函数用来根据给定的值创建一个响应式的数据对象，ref() 函数调用的返回值是一个对象，这个对象上只包含一个 .value 属性：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;p&gt;count的值为{{refCount}}&lt;/p&gt;
+        &lt;button @click=&quot;refCount+=1&quot;&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import {ref} from &quot;@vue/composition-api&quot;
+    export default{
+        setup(){
+            const refCount = ref(0);
+            console.log(refCount.value)
+
+            return {
+                refCount
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre></div><p><img src="http://r.photo.store.qq.com/psc?/V121VjTP2yfy1N/uMeul31pGB4ZvQm8Ou4xccDWfLne3rlzz*JKlHU*cKOfeCiW47hnpVb36tR0Zzmfe4J1p3FHxnEuReWAcCQJNpXesbO81GJ1Fvs457yYnW4!/r" alt=""></p> <h2 id="isref"><a href="#isref" class="header-anchor">#</a> isRef</h2> <p>isRef() 用来判断某个值是否为 ref() 创建出来的对象；应用场景：当需要展开某个可能为 ref() 创建出来的值的时候</p> <div class="language- extra-class"><pre class="language-text"><code>import { isRef } from '@vue/composition-api'
+
+const unwrapped = isRef(foo) ? foo.value : foo
+</code></pre></div><h2 id="torefs"><a href="#torefs" class="header-anchor">#</a> toRefs</h2> <p>toRefs() 函数可以将 reactive() 创建出来的响应式对象，转换为普通的对象，只不过，这个对象上的每个属性节点，都是 ref() 类型的响应式数据，最常见的应用场景如下</p> <p>ref.vue</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;p&gt;count的值为{{refCount}}&lt;/p&gt;
+        &lt;button @click=&quot;refCount+=1&quot;&gt;+1&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import {ref} from &quot;@vue/composition-api&quot;
+    export default{
+        setup(){
+            const refCount = ref(0);
+            console.log(refCount.value)
+
+            return {
+                refCount
+            }
+        }
+    }
+&lt;/script&gt;
+</code></pre></div><p><img src="http://r.photo.store.qq.com/psc?/V121VjTP2yfy1N/uMeul31pGB4ZvQm8Ou4xccDWfLne3rlzz*JKlHU*cKOfeCiW47hnpVb36tR0Zzmfe4J1p3FHxnEuReWAcCQJNpXesbO81GJ1Fvs457yYnW4!/r" alt=""></p> <h2 id="computed"><a href="#computed" class="header-anchor">#</a> computed</h2> <p>computed() 用来创建计算属性，computed() 函数的返回值是一个 ref 的实例。使用 computed 之前需要按需导入：</p> <div class="language- extra-class"><pre class="language-text"><code>import { computed } from '@vue/composition-api'
+</code></pre></div><h3 id="创建只读的计算属性"><a href="#创建只读的计算属性" class="header-anchor">#</a> 创建只读的计算属性</h3> <p>在调用 computed() 函数期间，传入一个 function 函数，可以得到一个只读的计算属性，示例代码如下:</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;p&gt;count值为:{{refCount}}&lt;/p&gt;
+&lt;p&gt;计算属性的值:{{computedCount}}&lt;/p&gt;
+&lt;button @click=&quot;refCount+=1&quot;&gt;&lt;/button&gt;
+
+import {ref,computed} from '@vue/composition-api'
+export default{
+	setup(){
+		const refCount = ref(0);
+		
+		const computedCount = computed(() =refCount.value+1)
+		
+		return {
+			refCount,
+			computedCount
+		}
+	}
+}
+</code></pre></div><h3 id="创建可读可写的计算属性"><a href="#创建可读可写的计算属性" class="header-anchor">#</a> 创建可读可写的计算属性</h3> <p>在调用 computed() 函数期间，传入一个包含 get 和 set 函数的对象，可以得到一个可读可写的计算属性，示例代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>// 创建一个 ref 响应式数据
+const count = ref(1)
+
+// 创建一个 computed 计算属性
+const plusOne = computed({
+  // 取值函数
+  get: () =&gt; count.value + 1,
+  // 赋值函数
+  set: val =&gt; {
+    count.value = val - 1
+  }
+})
+
+// 为计算属性赋值的操作，会触发 set 函数
+plusOne.value = 9
+// 触发 set 函数后，count 的值会被更新
+console.log(count.value) // 输出 8
+</code></pre></div><h2 id="watch"><a href="#watch" class="header-anchor">#</a> watch</h2> <p>watch() 函数用来监视某些数据项的变化，从而触发某些特定的操作，使用之前需要按需导入</p> <div class="language- extra-class"><pre class="language-text"><code>import { watch } from '@vue/composition-api'
+</code></pre></div><h3 id="基础用法"><a href="#基础用法" class="header-anchor">#</a> 基础用法</h3> <div class="language- extra-class"><pre class="language-text"><code>const count = ref(0)
+
+// 定义 watch，只要 count 值变化，就会触发 watch 回调
+// watch 会在创建时会自动调用一次
+watch(() =&gt; console.log(count.value))
+// 输出 0
+
+setTimeout(() =&gt; {
+  count.value++
+  // 输出 1
+}, 1000)
+</code></pre></div><h3 id="监听指定的数据源"><a href="#监听指定的数据源" class="header-anchor">#</a> 监听指定的数据源</h3> <p>监视 reactive 类型的数据源：</p> <div class="language- extra-class"><pre class="language-text"><code>// 定义数据源
+const state = reactive({ count: 0 })
+// 监视 state.count 这个数据节点的变化
+watch(
+  () =&gt; state.count,
+  (count, prevCount) =&gt; {
+    /* ... */
+  }
+)
+</code></pre></div><p>监视 <code>ref</code> 类型的数据源：</p> <div class="language- extra-class"><pre class="language-text"><code>// 定义数据源
+const count = ref(0)
+// 指定要监视的数据源
+watch(count, (count, prevCount) =&gt; {
+  /* ... */
+})
+</code></pre></div><h3 id="监听多个数据源"><a href="#监听多个数据源" class="header-anchor">#</a> 监听多个数据源</h3> <p>监视 <code>reactive</code> 类型的数据源：</p> <div class="language- extra-class"><pre class="language-text"><code>const state = reactive({ count: 0, name: 'zs' })
+
+watch(
+  [() =&gt; state.count, () =&gt; state.name], // Object.values(toRefs(state)),
+  ([count, name], [prevCount, prevName]) =&gt; {
+    console.log(count) // 新的 count 值
+    console.log(name) // 新的 name 值
+    console.log('------------')
+    console.log(prevCount) // 旧的 count 值
+    console.log(prevName) // 新的 name 值
+  },
+  {
+    lazy: true // 在 watch 被创建的时候，不执行回调函数中的代码
+  }
+)
+
+setTimeout(() =&gt; {
+  state.count++
+  state.name = 'ls'
+}, 1000)
+</code></pre></div><p>监视 <code>ref</code> 类型的数据源：</p> <div class="language- extra-class"><pre class="language-text"><code>const count = ref(0)
+const name = ref('zs')
+
+watch(
+  [count, name], // 需要被监视的多个 ref 数据源
+  ([count, name], [prevCount, prevName]) =&gt; {
+    console.log(count)
+    console.log(name)
+    console.log('-------------')
+    console.log(prevCount)
+    console.log(prevName)
+  },
+  {
+    lazy: true
+  }
+)
+
+setTimeout(() =&gt; {
+  count.value++
+  name.value = 'xiaomaolv'
+}, 1000)
+</code></pre></div><h3 id="清除监听"><a href="#清除监听" class="header-anchor">#</a> 清除监听</h3> <p>在 setup() 函数内创建的 watch 监视，会在当前组件被销毁的时候自动停止。如果想要明确地停止某个监视，可以调用 watch() 函数的返回值即可，语法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>// 创建监视，并得到 停止函数
+const stop = watch(() =&gt; {
+  /* ... */
+})
+
+// 调用停止函数，清除对应的监视
+stop()
+</code></pre></div><h3 id="在watch清除无效的异步任务"><a href="#在watch清除无效的异步任务" class="header-anchor">#</a> 在watch清除无效的异步任务</h3> <p>有时候，当被 watch 监视的值发生变化时，或 watch 本身被 stop 之后，我们期望能够清除那些无效的异步任务，此时，watch 回调函数中提供了一个 cleanup registrator function 来执行清除的工作。这个清除函数会在如下情况下被调用：</p> <p>watch 被重复执行了
+watch 被强制 stop 了</p> <div class="language- extra-class"><pre class="language-text"><code>/* template 中的代码 */ &lt;input type=&quot;text&quot; v-model=&quot;keywords&quot; /&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// 定义响应式数据 keywords
+const keywords = ref('')
+
+// 异步任务：打印用户输入的关键词
+const asyncPrint = val =&gt; {
+  // 延时 1 秒后打印
+  return setTimeout(() =&gt; {
+    console.log(val)
+  }, 1000)
+}
+
+// 定义 watch 监听
+watch(
+  keywords,
+  (keywords, prevKeywords, onCleanup) =&gt; {
+    // 执行异步任务，并得到关闭异步任务的 timerId
+    const timerId = asyncPrint(keywords)
+
+    // 如果 watch 监听被重复执行了，则会先清除上次未完成的异步任务
+    onCleanup(() =&gt; clearTimeout(timerId))
+  },
+  // watch 刚被创建的时候不执行
+  { lazy: true }
+)
+
+// 把 template 中需要的数据 return 出去
+return {
+  keywords
+}
+</code></pre></div><h2 id="生命周期"><a href="#生命周期" class="header-anchor">#</a> 生命周期</h2> <p>LifeCycle Hooks</p> <p>是 vue 2.x 的生命周期函数与新版 Composition API 之间的映射关系：</p> <ul><li><s><code>beforeCreate</code></s> -&gt; use <code>setup()</code></li> <li><s><code>created</code></s> -&gt; use <code>setup()</code></li> <li><code>beforeMount</code> -&gt; <code>onBeforeMount</code></li> <li><code>mounted</code> -&gt; <code>onMounted</code></li> <li><code>beforeUpdate</code> -&gt; <code>onBeforeUpdate</code></li> <li><code>updated</code> -&gt; <code>onUpdated</code></li> <li><code>beforeDestroy</code> -&gt; <code>onBeforeUnmount</code></li> <li><code>destroyed</code> -&gt; <code>onUnmounted</code></li> <li><code>errorCaptured</code> -&gt; <code>onErrorCaptured</code></li></ul> <p>发生ajax请求都是在mounted里面调用</p> <p>新版的生命周期函数，可以按需导入到组件中，且只能在 setup() 函数中使用，代码示例如下：</p> <div class="language- extra-class"><pre class="language-text"><code>import { onMounted, onUpdated, onUnmounted } from '@vue/composition-api'
+
+const MyComponent = {
+  setup() {
+    onMounted(() =&gt; {
+      console.log('mounted!')
+    })
+    onUpdated(() =&gt; {
+      console.log('updated!')
+    })
+    onUnmounted(() =&gt; {
+      console.log('unmounted!')
+    })
+  }
+}
+</code></pre></div><h2 id="provide-inject"><a href="#provide-inject" class="header-anchor">#</a> provide&amp;inject</h2> <p>provide() 和 inject() 可以实现嵌套组件之间的数据传递。这两个函数只能在 setup() 函数中使用。父级组件中使用 provide() 函数向下传递数据；子级组件中使用 inject() 获取上层传递过来的数据</p> <h3 id="共享普通数据"><a href="#共享普通数据" class="header-anchor">#</a> 共享普通数据</h3> <p>App.vue 根组件：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;App 根组件&lt;/h1&gt;
+    &lt;hr /&gt;
+    &lt;LevelOne /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import LevelOne from './components/LevelOne'
+// 1. 按需导入 provide
+import { provide } from '@vue/composition-api'
+
+export default {
+  name: 'app',
+  setup() {
+    // 2. App 根组件作为父级组件，通过 provide 函数向子级组件共享数据（不限层级）
+    //    provide('要共享的数据名称', 被共享的数据)
+    provide('globalColor', 'red')
+  },
+  components: {
+    LevelOne
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>LevelOne.vue 组件：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;!-- 4. 通过属性绑定，为标签设置字体颜色 --&gt;
+    &lt;h3 :style=&quot;{color: themeColor}&quot;&gt;Level One&lt;/h3&gt;
+    &lt;hr /&gt;
+    &lt;LevelTwo /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import LevelTwo from './LevelTwo'
+// 1. 按需导入 inject
+import { inject } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 2. 调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+    const themeColor = inject('globalColor')
+
+    // 3. 把接收到的共享数据 return 给 Template 使用
+    return {
+      themeColor
+    }
+  },
+  components: {
+    LevelTwo
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>LevelTwo.vue 组件：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;!-- 4. 通过属性绑定，为标签设置字体颜色 --&gt;
+    &lt;h5 :style=&quot;{color: themeColor}&quot;&gt;Level Two&lt;/h5&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+// 1. 按需导入 inject
+import { inject } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 2. 调用 inject 函数时，通过指定的数据名称，获取到父级共享的数据
+    const themeColor = inject('globalColor')
+
+    // 3. 把接收到的共享数据 return 给 Template 使用
+    return {
+      themeColor
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><h3 id="共享ref响应式数据"><a href="#共享ref响应式数据" class="header-anchor">#</a> 共享ref响应式数据</h3> <p>如下代码实现了点按钮切换主题颜色的功能，主要修改了 App.vue 组件中的代码，LevelOne.vue 和 LevelTwo.vue 中的代码不受任何改变：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;h1&gt;App 根组件&lt;/h1&gt;
+
+    &lt;!-- 点击 App.vue 中的按钮，切换子组件中文字的颜色 --&gt;
+    &lt;button @click=&quot;themeColor='red'&quot;&gt;红色&lt;/button&gt;
+    &lt;button @click=&quot;themeColor='blue'&quot;&gt;蓝色&lt;/button&gt;
+    &lt;button @click=&quot;themeColor='orange'&quot;&gt;橘黄色&lt;/button&gt;
+
+    &lt;hr /&gt;
+    &lt;LevelOne /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import LevelOne from './components/LevelOne'
+import { provide, ref } from '@vue/composition-api'
+
+export default {
+  name: 'app',
+  setup() {
+    // 定义 ref 响应式数据
+    const themeColor = ref('red')
+
+    // 把 ref 数据通过 provide 提供的子组件使用
+    provide('globalColor', themeColor)
+
+    // setup 中 return 数据供当前组件的 Template 使用
+    return {
+      themeColor
+    }
+  },
+  components: {
+    LevelOne
+  }
+}
+&lt;/script&gt;
+</code></pre></div><h2 id="ref引用dom元素和组件实例"><a href="#ref引用dom元素和组件实例" class="header-anchor">#</a> ref引用DOM元素和组件实例</h2> <p>通过 ref() 还可以引用页面上的元素或组件</p> <h3 id="元素的引用"><a href="#元素的引用" class="header-anchor">#</a> 元素的引用</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h3 ref=&quot;h3Ref&quot;&gt;TemplateRefOne&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref, onMounted } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 创建一个 DOM 引用
+    const h3Ref = ref(null)
+
+    // 在 DOM 首次加载完毕之后，才能获取到元素的引用
+    onMounted(() =&gt; {
+      // 为 dom 元素设置字体颜色
+      // h3Ref.value 是原生DOM对象
+      h3Ref.value.style.color = 'red'
+    })
+
+    // 把创建的引用 return 出去
+    return {
+      h3Ref
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><h3 id="组件的引用"><a href="#组件的引用" class="header-anchor">#</a> 组件的引用</h3> <p>TemplateRefOne.vue 中的示例代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h3&gt;TemplateRefOne&lt;/h3&gt;
+
+    &lt;!-- 4. 点击按钮展示子组件的 count 值 --&gt;
+    &lt;button @click=&quot;showNumber&quot;&gt;获取TemplateRefTwo中的count值&lt;/button&gt;
+
+    &lt;hr /&gt;
+    &lt;!-- 3. 为组件添加 ref 引用 --&gt;
+    &lt;TemplateRefTwo ref=&quot;comRef&quot; /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref } from '@vue/composition-api'
+import TemplateRefTwo from './TemplateRefTwo'
+
+export default {
+  setup() {
+    // 1. 创建一个组件的 ref 引用
+    const comRef = ref(null)
+
+    // 5. 展示子组件中 count 的值
+    const showNumber = () =&gt; {
+      console.log(comRef.value.count)
+    }
+
+    // 2. 把创建的引用 return 出去
+    return {
+      comRef,
+      showNumber
+    }
+  },
+  components: {
+    TemplateRefTwo
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>TemplateRefTwo.vue 中的示例代码：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;h5&gt;TemplateRefTwo --- {{count}}&lt;/h5&gt;
+    &lt;!-- 3. 点击按钮，让 count 值自增 +1 --&gt;
+    &lt;button @click=&quot;count+=1&quot;&gt;+1&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { ref } from '@vue/composition-api'
+
+export default {
+  setup() {
+    // 1. 定义响应式的数据
+    const count = ref(0)
+
+    // 2. 把响应式数据 return 给 Template 使用
+    return {
+      count
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><h2 id="createcomponent"><a href="#createcomponent" class="header-anchor">#</a> createComponent</h2> <p>这个函数不是必须的，除非你想要完美结合 TypeScript 提供的类型推断来进行项目的开发</p> <p>这个函数仅仅提供了类型推断，方便在结合 TypeScript 书写代码时，能为 setup() 中的 props 提供完整的类型推断</p> <div class="language- extra-class"><pre class="language-text"><code>import { createComponent } from 'vue'
+
+export default createComponent({
+  props: {
+    foo: String
+  },
+  setup(props) {
+    props.foo // &lt;- type: string
+  }
+})
+</code></pre></div><h2 id="nexttick的作用"><a href="#nexttick的作用" class="header-anchor">#</a> $nextTick的作用</h2> <p>当组件具最新的data数据  重新渲染完成之后 再执行回调函数中的操作，需要用到nextTick不会报错</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;h1&gt;学习nextTick&lt;/h1&gt;
+        &lt;button v-if=&quot;isShowInput === false&quot; @click=&quot;showInput&quot;&gt;展示文本框&lt;/button&gt;
+        &lt;input type=&quot;text&quot; v-else ref=&quot;ipt&quot;&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default{
+    data(){
+        return{
+            isShowInput: false
+        }
+    },
+    methods:{
+        showInput(){
+            this.isShowInput = true;
+            // this.$refs.ipt.focus();
+            //当组件更具最新的data数据  重新渲染完成之后 再执行回调函数中的操作
+            this.$nextTick(() =&gt;{
+                this.$refs.ipt.focus();
+            })
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre></div><h2 id="实现响应式源码"><a href="#实现响应式源码" class="header-anchor">#</a> 实现响应式源码</h2> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+	function usePosition(){
+		let position = Vue.reactive({x:0,y:0});
+		function update(e){
+			position.x=e.pageX;
+			position.y=e.pageY;
+		}
+		Vue.onmounted(()=&gt;{
+			window.addEventListener('mousemove',update)
+		})
+		Vue.onUnmounted(()=&gt;{
+			window.addEventListener('mousemove',update)
+		});
+		return Vue.toRefs(position);
+	}
+	//我们要获取鼠标的位置 这个功能在很多地方都需要被复用
+	//composition api多个方法进行组合来使用
+	const App = {
+		setup(){
+			let state = Vue.reactive({name:'xiaoming'});
+			let postion = usePosition();
+			function change(){
+			  state.name = 'xiaoai'
+			}
+			return {//这个对象会作为渲染的上下文
+			  state,
+			  change
+			}
+		}
+		template:'&lt;div @click=&quot;change&quot;&gt;{{state.name}}&lt;/div&gt;'
+	}
+&lt;/script&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//Vue2.0  vue如何实现响应式原理
+//数据变化了，可以更新视图
+let oldArrayPrototype = Array.prototype;
+let proto = Object.create(oldArrayPrototype);//继承
+['push','shift','unshift'].forEach(method=&gt;{
+	proto[method] = function(){//函数劫持  把函数进行重写 内部 继续调用老的方法
+		updateView();//切片编程
+		oldArrayPrototype[method].call(this,...arguments)
+	}
+})
+function observer(targer){
+	if(typeof target !=== 'object' &amp;&amp; target == null){
+		return target;
+	}
+	if(Array.isArray(target)){//拦截数组  给数组的方法进行重写
+		Object.setProtoOf(target,proto);//写个循环  赋予给target
+	}
+	for(let key in target){
+		defineReactive({target,key,target[key]});
+	}
+}
+function definReactive(target,key,value){
+	observe(value);//递归  如果这个value值也是对象的话  我就将这个歌对象继续拦截
+	Object.defineProperty(target,key,{
+		get(){//get中会进行依赖收集
+			return value
+		}
+		set(newValue){
+			if(newValue !== value){
+				updateView();
+				value = newValue
+			}
+		}
+	})
+}
+//如果属性不存在 新增的属性 会是响应式的吗？
+function updateView(){
+	console.log('更新视图')
+}
+//使用Object.defineProperty 就是可以重新定义属性 给属性提娜佳getter和setter
+let data = {name:'xiaoming',age:[1,2,3]};
+observer(data);
+data.age.push(4);//需要对数组上的方法进行重写 push shift unshift pop push reserse
+//data.name='xiaoai'
+console.log(data.name)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+	let proxy = Vue.reactive({name: 'xiaoming'});
+	//副作用
+	Vue.effect(()=&gt;{
+		console.log(proxy.name)//xiaoming  xiaoai
+	})
+	proxy.name = 'xiaoai';
+&lt;/script&gt;
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//vue3.0响应式原理
+//1.    2.0会默认盒递归
+//2.    数组改变length  是无效的
+//3.    对象不存在的属性不能被拦截
+//判断是不是对象
+function isObject(val){
+	return typeof val === 'object' &amp;&amp; val !== null;
+}
+//响应式的核心方法
+functio reactive(target){
+	//创建响应式对象
+	return createReactiveObject(target);
+}
+//创建响应式对象的
+function createRetiveObject(target){
+	if(!isObject){//如果当前不是对象  直接返回即可
+		 return target;
+	}
+	let baseHandler = {
+		//reflect有点 不会报错 而且会有返回值 会替代掉Object上的方法
+		get(target,key,receiver){
+			//proxy+reflect反射
+			console.log('获取')
+			let result = Reflect.get(target,key,receiver)
+			return result;
+		},
+		set(target,key,value,re){
+			//如果设置没成功，如果这个对象不可以被更改 writable
+			let res = Reflect.set(target,key,value,receiver);
+			console.log('设置')
+			return res;
+		},
+		deleteProperty(target,key){
+			let res = Reflect.deleteProperty(target,key)
+			console.log('删除')
+			return res;
+		}
+	}
+	let observed = new Proxy(target,baseHandler);//es6
+	return observed;
+}
+//代理对象
+let proxy = reactive({name:'xiaoming'})
+proxy.name
+proxy.name='123'
+delete.proxy.name
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/page6/vuex的用法.html" class="prev">
+        vuex的用法
+      </a></span> <span class="next"><a href="/page6/题目.html">
+        题目
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3f0b164.js" defer></script><script src="/assets/js/2.284f78c8.js" defer></script><script src="/assets/js/38.ce143c7c.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入解读es6 | ming的个人网站</title>
+    <meta name="description" content="Welcome to come to my blog">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.70f2d267.css" as="style"><link rel="preload" href="/assets/js/app.f3f0b164.js" as="script"><link rel="preload" href="/assets/js/2.284f78c8.js" as="script"><link rel="preload" href="/assets/js/35.d2d4f756.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bd6822.js"><link rel="prefetch" href="/assets/js/11.7be908fe.js"><link rel="prefetch" href="/assets/js/12.71222861.js"><link rel="prefetch" href="/assets/js/13.0e9f2f34.js"><link rel="prefetch" href="/assets/js/14.70e31408.js"><link rel="prefetch" href="/assets/js/15.8e83af5f.js"><link rel="prefetch" href="/assets/js/16.3f82f6aa.js"><link rel="prefetch" href="/assets/js/17.9c893c24.js"><link rel="prefetch" href="/assets/js/18.8ce12f88.js"><link rel="prefetch" href="/assets/js/19.4539c1e6.js"><link rel="prefetch" href="/assets/js/20.8d6b15a2.js"><link rel="prefetch" href="/assets/js/21.aa90be3e.js"><link rel="prefetch" href="/assets/js/22.0741e8cf.js"><link rel="prefetch" href="/assets/js/23.26e38199.js"><link rel="prefetch" href="/assets/js/24.437832b0.js"><link rel="prefetch" href="/assets/js/25.3ac7a3f9.js"><link rel="prefetch" href="/assets/js/26.f3036c64.js"><link rel="prefetch" href="/assets/js/27.85d3ca2e.js"><link rel="prefetch" href="/assets/js/28.f59e28e7.js"><link rel="prefetch" href="/assets/js/29.74627ca0.js"><link rel="prefetch" href="/assets/js/3.c17543fc.js"><link rel="prefetch" href="/assets/js/30.7b42eae2.js"><link rel="prefetch" href="/assets/js/31.9c88f4b6.js"><link rel="prefetch" href="/assets/js/32.3302434b.js"><link rel="prefetch" href="/assets/js/33.bd99df5c.js"><link rel="prefetch" href="/assets/js/34.a20acac1.js"><link rel="prefetch" href="/assets/js/36.18286c43.js"><link rel="prefetch" href="/assets/js/37.84831a8a.js"><link rel="prefetch" href="/assets/js/38.ce143c7c.js"><link rel="prefetch" href="/assets/js/39.11e44bd7.js"><link rel="prefetch" href="/assets/js/4.24ba765a.js"><link rel="prefetch" href="/assets/js/40.cb8f8018.js"><link rel="prefetch" href="/assets/js/41.f6a28df9.js"><link rel="prefetch" href="/assets/js/42.fbd48b3c.js"><link rel="prefetch" href="/assets/js/43.131d6d97.js"><link rel="prefetch" href="/assets/js/44.2c119204.js"><link rel="prefetch" href="/assets/js/45.198a5b50.js"><link rel="prefetch" href="/assets/js/46.c2f0e139.js"><link rel="prefetch" href="/assets/js/47.71dfa535.js"><link rel="prefetch" href="/assets/js/48.cb8ad619.js"><link rel="prefetch" href="/assets/js/49.cbeee829.js"><link rel="prefetch" href="/assets/js/5.e87ba801.js"><link rel="prefetch" href="/assets/js/50.ff87b9b9.js"><link rel="prefetch" href="/assets/js/51.8943f310.js"><link rel="prefetch" href="/assets/js/52.f08a077e.js"><link rel="prefetch" href="/assets/js/53.5b096969.js"><link rel="prefetch" href="/assets/js/54.39e8487d.js"><link rel="prefetch" href="/assets/js/55.581e549d.js"><link rel="prefetch" href="/assets/js/56.d60cbfa0.js"><link rel="prefetch" href="/assets/js/6.b35a0751.js"><link rel="prefetch" href="/assets/js/7.aa04d747.js"><link rel="prefetch" href="/assets/js/8.2805aa08.js"><link rel="prefetch" href="/assets/js/9.2159abe2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.70f2d267.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ming的个人网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page5/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page5/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS3</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JQuery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ES6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/page5/深入解读es6.html" class="active sidebar-link">深入解读es6</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#es6和js的区别" class="sidebar-link">ES6和JS的区别</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#es6的历史版本" class="sidebar-link">ES6的历史版本</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#es6兼容性" class="sidebar-link">ES6兼容性</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#var、let、const" class="sidebar-link">var、let、const</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#块级作用域有什么用" class="sidebar-link">块级作用域有什么用</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#箭头函数" class="sidebar-link">箭头函数</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#函数的参数" class="sidebar-link">函数的参数</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#解构赋值" class="sidebar-link">解构赋值</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#数组" class="sidebar-link">数组</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#字符串" class="sidebar-link">字符串</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#面向对象基础" class="sidebar-link">面向对象基础</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#面向对象实例" class="sidebar-link">面向对象实例</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#json" class="sidebar-link">JSON</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#promise" class="sidebar-link">Promise</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#generator认识生成器函数" class="sidebar-link">generator认识生成器函数</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#generator-yield是个啥" class="sidebar-link">generator-yield是个啥</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#generator实例-runner" class="sidebar-link">generator实例-runner</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#generator实例-koa" class="sidebar-link">generator实例-KOA</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#es6总结复习" class="sidebar-link">ES6总结复习</a></li><li class="sidebar-sub-header"><a href="/page5/深入解读es6.html#es7预览" class="sidebar-link">ES7预览</a></li></ul></li><li><a href="/page5/promise.html" class="sidebar-link">promise</a></li><li><a href="/page5/promise对象的使用.html" class="sidebar-link">promise对象的使用</a></li><li><a href="/page5/题目.html" class="sidebar-link">题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Http请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="深入解读es6"><a href="#深入解读es6" class="header-anchor">#</a> 深入解读es6</h1> <h2 id="es6和js的区别"><a href="#es6和js的区别" class="header-anchor">#</a> ES6和JS的区别</h2> <ul><li><p>ES6是标准</p></li> <li><p>JS 是实现</p></li></ul> <h2 id="es6的历史版本"><a href="#es6的历史版本" class="header-anchor">#</a> ES6的历史版本</h2> <ul><li>1996, ES1.0 Netscape 将 JS 提交给 ECMA 组织，ES 正式出现</li> <li>1999, ES3.0 被广泛支持</li> <li>2011, ES5.1 成为 ISO 国际标准</li> <li>2015, ES6.0 正式发布</li></ul> <h2 id="es6兼容性"><a href="#es6兼容性" class="header-anchor">#</a> ES6兼容性</h2> <p>ES6(ES2015) 支持的环境 IE10+, Chrome, FireFox, 移动端, NodeJS</p> <p>解决不兼容办法，编译、转换</p> <ul><li>在线转换</li> <li>或者提前编译</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let a=20;
+let b=5;
+alert(a+b);
+</code></pre></div><p><a href="https://www.babeljs.cn/" target="_blank" rel="noopener noreferrer">Babel 中文网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><a href="http://www.ruanyifeng.com/blog/2016/01/babel.html" target="_blank" rel="noopener noreferrer">Babel 入门教程 阮一峰<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>Babel 是一个 JavaScript 编译器</li> <li>一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行</li></ul> <h2 id="var、let、const"><a href="#var、let、const" class="header-anchor">#</a> var、let、const</h2> <h3 id="var"><a href="#var" class="header-anchor">#</a> var</h3> <ul><li>可以重复声明</li></ul> <div class="language- extra-class"><pre class="language-text"><code>var a=12
+var a=6
+alert(a); //可以出来结果，不报错，出来的结果为6
+</code></pre></div><ul><li>无法限制修改</li></ul> <div class="language- extra-class"><pre class="language-text"><code>PI=3.1415926  //这个都是无法限制修改的
+</code></pre></div><ul><li>没有块级作用域</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if(true){
+	var a=12
+}
+alert(a);//出来的结果是12
+</code></pre></div><h3 id="let"><a href="#let" class="header-anchor">#</a> let</h3> <ul><li>不能重复声明</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let a=5
+let a=10
+alert(a);//这时候就会出现报错，因为相同的变量不能声明两次
+</code></pre></div><ul><li>可以修改</li></ul> <div class="language- extra-class"><pre class="language-text"><code>//let是定义变量，可以修改
+let a=12
+a=20
+alert(a)//打印出来的结果a=20
+</code></pre></div><ul><li>有块级作用域</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if(true){
+	let a=12;
+}
+alert(a);//这个时候就会出现报错，说a没有定义
+</code></pre></div><h3 id="const"><a href="#const" class="header-anchor">#</a> const</h3> <ul><li>不能重复声明</li></ul> <div class="language- extra-class"><pre class="language-text"><code>const a=5
+const a=10
+alert(a);//这时候就会出现报错，因为相同的变量不能声明两次
+</code></pre></div><ul><li>不能修改</li></ul> <div class="language- extra-class"><pre class="language-text"><code>//const是定义的常量，不能修改
+const a=12;
+a=5;
+alert(a);//这时候就会出现报错，不能修改
+</code></pre></div><ul><li>有块级作用域</li></ul> <div class="language- extra-class"><pre class="language-text"><code>if(true){
+	const a=12;
+}
+alert(a);//这个时候就会出现报错，说a没有定义
+</code></pre></div><h2 id="块级作用域有什么用"><a href="#块级作用域有什么用" class="header-anchor">#</a> 块级作用域有什么用</h2> <h3 id="var案例"><a href="#var案例" class="header-anchor">#</a> var案例</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+	window.onload=function(){
+		var aBtn=document.getElementsByTagName('input')
+		for(var i=0;i&lt;aBtn.length;i++){
+			aBtn[i].onclick=function(){
+				alert(i);
+			}
+		}
+	}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期一&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期二&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期三&quot;&gt;
+&lt;/body&gt;
+</code></pre></div><p>打印出来的结果就是点击3个按钮，都弹出3，这说明了var没有块级作用域</p> <p>所以这下边这段代码就进行了修改，打印出来三个按钮就是0、1、2</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+	window.onload=function(){
+		var aBtn=document.getElementsByTagName('input')
+		for(let i=0;i&lt;aBtn.length;i++){
+			(function(i){
+				aBtn[i].onclick=function(){
+				alert(i);
+			};
+			})(i)
+		}
+	}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期一&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期二&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期三&quot;&gt;
+&lt;/body&gt;
+</code></pre></div><h3 id="let实例"><a href="#let实例" class="header-anchor">#</a> let实例</h3> <p>所以直接使用let就可以解决上边的问题，使三个按钮弹出的结果为0、1、2</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+	window.onload=function(){
+		var aBtn=document.getElementsByTagName('input')
+		for(let i=0;i&lt;aBtn.length;i++){
+			aBtn[i].onclick=function(){
+				alert(i);
+			}
+		}
+	}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期一&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期二&quot;&gt;
+	&lt;input type=&quot;button&quot; value=&quot;星期三&quot;&gt;
+&lt;/body&gt;
+</code></pre></div><h2 id="箭头函数"><a href="#箭头函数" class="header-anchor">#</a> 箭头函数</h2> <ul><li>如果只有一个参数，（）可以省</li> <li>如果只有一个return，{ }可以省略</li></ul> <h3 id="普通函数和箭头函数写法"><a href="#普通函数和箭头函数写法" class="header-anchor">#</a> 普通函数和箭头函数写法</h3> <div class="language- extra-class"><pre class="language-text"><code>//普通函数1
+function show(){
+	
+}
+//箭头函数1
+let show=()=&gt;{
+	
+}
+//普通函数2
+function(){
+	
+}
+//箭头函数2
+()=&gt;{
+	
+}
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//普通函数
+window.onload=function(){
+		alert('abc')
+	}
+//箭头函数	
+window.onload=()=&gt;{
+    alert('abc')
+  }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>	//普通函数
+	let show=function(){
+		alert('abc')
+	};
+	show();
+	//箭头函数
+    let show=()=&gt;{
+   		 alert('123')
+	}
+	show();
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>	//普通函数
+	let show=function(a,b){
+		alert(a+b);
+	}
+	show(23,9)
+	//箭头函数
+    let show=()=&gt;{
+   	  alert(23+9)
+	}
+	show(23+9)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//普通函数
+let arr = [12,8,7,99,14,26];
+		arr.sort(function(n1,n2){
+			return n1-n2
+		})
+	alert(arr)
+//箭头函数
+	let arr = [12,8,7,99,14,26];
+		arr.sort=(n1,n2)=&gt;{
+			return n1-n2
+		}
+	alert(arr)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>	//普通函数
+	let show=function(a){
+		return a*2
+	}
+	alert(show(23))
+	//箭头函数
+    let show=(a)=&gt;{
+        return a*2
+    }
+    alert(show(12))
+</code></pre></div><h2 id="函数的参数"><a href="#函数的参数" class="header-anchor">#</a> 函数的参数</h2> <ul><li>参数的扩展/展开</li> <li>默认参数</li></ul> <h3 id="参数扩展"><a href="#参数扩展" class="header-anchor">#</a> 参数扩展</h3> <ul><li>收集剩余的参数</li></ul> <div class="language- extra-class"><pre class="language-text"><code>	function show(a,b,...args){
+		alert(args)
+	}
+	show(12,12,34,3,2,4,28)//打印出来的结果是34,3,2,4,28   (...args必须放在最后面)
+</code></pre></div><ul><li><p>展开数组</p> <p>展开后的效果，跟直接把数组的内容写在这儿一样</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>	//普通函数
+	function show(a,b,c){
+		alert(a);
+		alert(b);
+		alert(c)
+	}
+	show(1,2,3)//打印出来的结果弹出1,再弹出2，再弹出3
+	
+	//数组展开
+	let arr1=[1,2,3]
+	let arr2=[5,6,7]
+	let arr=[...arr1,...arr2];
+	alert(arr)
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>	function show(...args){
+		fn(...args);
+	}
+	function fn(a,b){
+		alert(a+b)
+	}
+	show(12,5)//弹出17
+</code></pre></div><h3 id="默认参数"><a href="#默认参数" class="header-anchor">#</a> 默认参数</h3> <div class="language- extra-class"><pre class="language-text"><code>$('#div1').animate({width:'200px'});
+$('#div1').animate({width:'200px'},1000);
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>	function show(a,b=5,c=12){
+		console.log(a,b,c)
+	}
+	show(99)//99 5 12(默认参数就是直接把值替换成没有定义值的)
+</code></pre></div><h2 id="解构赋值"><a href="#解构赋值" class="header-anchor">#</a> 解构赋值</h2> <ul><li>左右两边结果必须一样</li> <li>右边必须是个东西</li> <li>声明和赋值不能分开(必须在一句话完成)</li></ul> <div class="language- extra-class"><pre class="language-text"><code>	//普通赋值
+	let arr=[1,2,3]
+	let a=arr[0]
+	let b=arr[1]
+	let c=arr[2]
+	console.log(a,b,c)//1,2,3
+	
+	//获取数组中的值
+    let[a,b,c]=[1,2,3]
+    console.log(a,b,c)//1,2,3
+    
+    //获取对象中的值
+    let {a,c,d}={a:12,c:5,d:6}
+    console.log(a,c,d)
+    
+    //复杂解构
+    let [{a,b},[n1,n2,n3],num,str]=[{a:12,b:4},[2,3,6],787,'abcdes']
+    console.log(a,b,n1,n2,n3,num,str)
+    
+    //复杂解构
+    let [json,arr,num,str]=[{a:12,b:4},[2,3,6],787,'abcdes']
+    console.log(json,arr,num,str)
+    
+    //获取数组中的值
+    let [a,b]=[123,23]
+    console.log(a,b)//123 23
+</code></pre></div><h2 id="数组"><a href="#数组" class="header-anchor">#</a> 数组</h2> <h3 id="map"><a href="#map" class="header-anchor">#</a> map</h3> <p>中文可以叫映射(一个对一个，比如给10个返回出来还是10个)</p> <div class="language- extra-class"><pre class="language-text"><code>//例子1
+[12,34,33,32,90,87,89]
+[不及格,不及格,不及格,不及格,及格,及格,及格]
+
+//例子2
+[45,78,278,890]
+[
+    {name:'one',level:0,role:9},
+    {name:'two',level:0,role:8},
+    {name:'three',level:0,role:7},
+    {name:'four',level:0,role:6},
+]
+
+//例子3
+let arr=[12,5,8];
+    let result = arr.map((item)=&gt;{
+    return item*2;
+    })
+alert(result)//24,10,16
+
+//例子4
+let arr=[12,5,8];
+let result = arr.map(item=&gt;item*2);
+alert(result)//24,10,16
+
+//例子5
+let score=[89,12,34,23,45,55];
+let result =score.map(item=&gt;item&gt;60?'及格':'不及格');
+alert(score);//89,12,34,23,45,55
+alert(result);//及格,不及格,不及格,不及格,不及格,不及格
+</code></pre></div><h3 id="reduce"><a href="#reduce" class="header-anchor">#</a> reduce</h3> <p>中文可以叫汇总(一堆出来一个，算个总数)</p> <div class="language- extra-class"><pre class="language-text"><code>//算总数
+[12,800000000,8998788789]=&gt; 908989089
+//算平均数
+[12,59,99]=&gt;56.67
+
+//例子1，算总和
+let score=[89,12,34,23,45,55];
+let result = score.reduce(function(tmp,item,index){
+return tmp+item;
+})
+alert(result)//258(把这几个数加起来的总和)
+
+//例子2,算平均数
+let score=[89,12,34,23,45,55];
+let result = score.reduce(function(tmp,item,index){
+return tmp+item;
+})
+alert(result/score.length)//43(把这几个数求平均数)
+
+//例子3
+let arr=[12,67,67,889,97];
+let result=arr.reduce(function(tmp,item,index){
+	if(index!=this.length-1){//不是最后一次
+		return tmp+item;
+	}else{//最后一次
+		return(tmp+item)
+	}
+})
+alert(result);//1132
+</code></pre></div><h3 id="filter"><a href="#filter" class="header-anchor">#</a> filter</h3> <p>中文可以叫过滤器</p> <div class="language- extra-class"><pre class="language-text"><code>//例子1
+let arr=[12,5,8,99,67,87];
+let result=arr.filter(item=&gt;{
+	if(item%3==0){
+		return true;
+	}else{
+		return false;
+	}
+});
+alert(result);//12,99,87
+
+//例子2
+let arr=[12,5,8,99,67,87];
+let result=arr.filter(item=&gt;{
+	alert(item%3==0);
+});//弹出布尔值
+
+//例子3
+let arr=[
+	{title:'外套',price:90},
+	{title:'毛衣',price:78},
+	{title:'睡衣',price:95558},
+	{title:'裤子',price:87},
+]
+let result=arr.filter(json=&gt;json.price&gt;=10000)
+console.log(result);//0: {title: &quot;睡衣&quot;, price: 95558}
+</code></pre></div><h3 id="foreach"><a href="#foreach" class="header-anchor">#</a> forEach</h3> <p>中文可以叫循环(迭代)</p> <div class="language- extra-class"><pre class="language-text"><code>let arr=[12,3,45,6,566];
+arr.forEach((item,index)=&gt;{
+	alert(index+':'+item)//0:12  1:3  2:45  3:6  4:566
+})
+</code></pre></div><h2 id="字符串"><a href="#字符串" class="header-anchor">#</a> 字符串</h2> <ul><li><p>多写两个新方法</p> <p>startsWith</p> <p>endsWith</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>//方法1：startWith
+let str='git://www.baidu.com/23448';
+if(str.startsWith('http://')){
+	alert('普通地址');
+}else if(str.startsWith('https://')){
+	alert('加密地址');
+}else if(str.startsWith('git://')){
+	alert('git地址');
+}else{
+	alert('其它');
+}//git地址
+
+//方法2：endsWith
+let str='1.jpg';
+if(str.endsWith('.txt')){
+	alert('文件文本');
+}else if(str.endsWith('.jpg')){
+	alert('JPG图片');
+}else{
+	alert('其它')
+}//JPG图片
+</code></pre></div><ul><li><p>字符串模板</p> <p>字符串连接(直接把东西塞到字符串里面  ${东西}   可以折行)</p> <div class="language- extra-class"><pre class="language-text"><code>//例子1
+let a =12;
+let str = `a${a}bc`;
+alert(str)//a12bc
+
+//例子2
+let title='标题';
+let content='内容';
+let str='&lt;div&gt;\
+	&lt;h1&gt;'+title+'&lt;/h1&gt;\
+	&lt;p&gt;'+content+'&lt;/p&gt;\
+  &lt;/div&gt;';
+  console.log(str)
+
+let str2=`&lt;div&gt;
+	&lt;h1&gt;${title}&lt;/h1&gt;
+	&lt;p&gt;${content}&lt;/p&gt;
+	&lt;div&gt;`
+</code></pre></div></li></ul> <h2 id="面向对象基础"><a href="#面向对象基础" class="header-anchor">#</a> 面向对象基础</h2> <ul><li>class关键字，构造器和类分开了</li> <li>class里面直接加方法</li></ul> <div class="language- extra-class"><pre class="language-text"><code>//面向对象方法1 
+function User(name,pass){
+	this.name=name;
+	this.pass=pass;
+}
+User.prototype.showName=function(){
+	alert(this.name)//xiaoming
+}
+User.prototype.showPass=function(){
+	alert(this.pass)//123456
+}
+var ul=new User('xiaoming','123456');
+ul.showName();
+ul.showPass();
+
+//面向对象方法2
+class User{
+	constructor(name,pass){
+		this.name=name;
+		this.pass=pass;
+	}
+	showName(){
+		alert(this.name)//xiaoming
+	}
+	showPass(){
+		alert(this.pass)//123456
+	}
+}
+var ul=new User('xiaoming','123456');
+ul.showName();
+ul.showPass();
+</code></pre></div><p>面向对象的继承</p> <p>super-超类==父亲</p> <div class="language- extra-class"><pre class="language-text"><code>class VipUser extends User{
+	constructor(name,pass,level){
+		super(name,pass);
+		this.level=level;
+	}
+	showLevel(){
+		alert(this.level)
+	}
+}
+var v1=new VipUser('xaioming','123456',3)
+v1.showName();//xaioming
+v1.showPass();//123456
+v1.showLevel();//3
+</code></pre></div><h2 id="面向对象实例"><a href="#面向对象实例" class="header-anchor">#</a> 面向对象实例</h2> <p>面向对象应用—React</p> <ul><li>组件化-class</li> <li>JSX</li></ul> <p>JSX==babel==browser.js</p> <h2 id="json"><a href="#json" class="header-anchor">#</a> JSON</h2> <ul><li><p>JSON对象</p> <p>JSON.stringify</p> <p>JSON.parse</p></li> <li><p>简写(名字一样，方法也可以简写，留一个就行)</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>show:function(){...}//以前是这种方法
+show(){...}//现在是这种方法
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let json={a:12,b:5};
+let str=&quot;http://baidu.com&quot;+encodeURIComponent(JSON.stringify(json))
+alert(str)//http://baidu.com%7B%22a%22%3A12%2C%22b%22%3A5%7D
+</code></pre></div><p>json的标准写法</p> <ul><li>只能用双引号</li> <li>所有的名字都必须用引号包起来</li></ul> <div class="language- extra-class"><pre class="language-text"><code>{a:12,b:5}  //这个是错的
+{&quot;a&quot;:12,&quot;b&quot;:5}   //这个是对的
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>{a:'abc',b:5}  //这个是错的
+{&quot;a&quot;:'abc',&quot;b&quot;:5}	//这个是对的
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//json的简写
+let a=12;
+let b=5;
+let json={a,b,c:54};
+console.log(json)//a: 12  b: 5  c: 54
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>let json={
+	a:12,
+	show(){
+		alert(this.a);//12
+	}
+}
+json.show();
+</code></pre></div><h2 id="promise"><a href="#promise" class="header-anchor">#</a> Promise</h2> <p>中文意思承诺</p> <h3 id="异步和同步"><a href="#异步和同步" class="header-anchor">#</a> 异步和同步</h3> <ul><li><p>异步：操作之间没啥关系，同时进行多个操作（代码更复杂）</p></li> <li><p>同步：同时只能做一件事（代码简单）</p></li></ul> <h3 id="promise-对象"><a href="#promise-对象" class="header-anchor">#</a> Promise 对象</h3> <ul><li>用同步的方式来书写异步代码</li> <li>Promise 让异步操作写起来，像在写同步操作的流程，不必一层层地嵌套回调函数</li> <li>改善了可读性，对于多层嵌套的回调函数很方便</li> <li>充当异步操作与回调函数之间的中介，使得异步操作具备同步操作的接口</li></ul> <h3 id="promise-也是一个构造函数"><a href="#promise-也是一个构造函数" class="header-anchor">#</a> Promise 也是一个构造函数</h3> <ul><li>接受一个回调函数f1作为参数，f1里面是异步操作的代码</li> <li>返回的p1就是一个 Promise 实例</li> <li>所有异步任务都返回一个 Promise 实例</li> <li>Promise 实例有一个then方法，用来指定下一步的回调函数</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">f1</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 异步代码...</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+p1<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// f1的异步操作执行完成，就会执行f2。</span>
+</code></pre></div><ul><li>Promise 使得异步流程可以写成同步流程</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 传统写法</span>
+<span class="token function">step1</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">step2</span><span class="token punctuation">(</span>value1<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">step3</span><span class="token punctuation">(</span>value2<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">step4</span><span class="token punctuation">(</span>value3<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">value4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Promise 的写法</span>
+<span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span>step1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step2<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step3<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>step4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>Promise.all(promiseArray)方法
+<ul><li>将多个Promise对象实例包装，生成并返回一个新的Promise实例</li> <li>promise数组中所有的promise实例都变为resolve的时候，该方法才会返回</li> <li>并将所有结果传递results数组中</li> <li>promise数组中任何一个promise为reject的话，则整个Promise.all调用会立即终止，并返回一个reject的新的promise对象</li></ul></li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> p1 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    p2 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    p3 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">,</span> p3<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// [1, 2, 3]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><ul><li>Promise.race([p1, p2, p3])
+<ul><li>Promse.race就是赛跑的意思</li> <li>哪个结果获得的快，就返回那个结果</li> <li>不管结果本身是成功状态还是失败状态</li></ul></li></ul> <h2 id="generator认识生成器函数"><a href="#generator认识生成器函数" class="header-anchor">#</a> generator认识生成器函数</h2> <h3 id="generator-生成器函数"><a href="#generator-生成器函数" class="header-anchor">#</a> generator 生成器函数</h3> <ul><li>普通函数，一路到底</li> <li>generator函数，中间可以停，到哪停呢，用 yield 配合，交出执行权</li> <li>yield 有 放弃、退让、退位的意思</li> <li>需要调用next()方法启动执行，需要遇到 yield 停, 踹一脚走一步</li> <li>generator函数前面加一个 <code>*</code> 两边可以有空格，或靠近函数或<code>function</code></li> <li>背后实际生成多个小函数，实现走走停停</li></ul> <div class="language- extra-class"><pre class="language-text"><code> // 普通函数
+function show() {
+    console.log('a')
+    console.log('b')
+}
+show()
+
+//generator生成器函数
+function *show2() {
+    console.log('1')
+    yield
+    console.log('2')
+}
+let genObj = show2()
+genObj.next() // 1
+genObj.next() // 2
+genObj.next() // 最后了，没有结果
+</code></pre></div><h2 id="generator-yield是个啥"><a href="#generator-yield是个啥" class="header-anchor">#</a> generator-yield是个啥</h2> <h3 id="yield"><a href="#yield" class="header-anchor">#</a> yield</h3> <ul><li>既可传参，又可以返回</li> <li>第一个<code>next()</code>传参无效，只用来启动</li></ul> <div class="language- extra-class"><pre class="language-text"><code>//例子1
+//yield可以传参
+function *show(){
+	alert('a');//a
+	let a=yield;
+	alert('b');//b
+	alert(a)//5
+}
+let gen=show();
+gen.next(12);
+gen.next(5);
+
+//例子2
+function *show(num1,num2){
+	alert(`${num1},${num2}`);//99,89
+	alert('a');//a
+	let a=yield;
+	alert('b');//b
+	alert(a)//45
+}
+let gen=show(99,89);
+gen.next(12);//没法给yield传参
+gen.next(45)
+
+//例子3  yield返回
+function *show(){
+	alert('a');
+	yield 12;
+	alert('b');
+	return 55;
+}
+let gen=show();
+let res1=gen.next();
+console.log(res1);//{value:12,done:false}
+let res2=gen.next()
+console.log(res2);//{value:55,done:true}    最后一步的结果靠return
+</code></pre></div><h2 id="generator实例-runner"><a href="#generator实例-runner" class="header-anchor">#</a> generator实例-runner</h2> <h3 id="异步操作"><a href="#异步操作" class="header-anchor">#</a> 异步操作</h3> <ul><li>回调</li> <li>Promise 适合一次读一组</li> <li>generator 适合逻辑性的</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 带逻辑-generator
+runner(function * () {
+    let userData = yield $.ajax({url: 'getUserData'})
+
+    if (userData.type == 'VIP') {
+        let items = yield $.ajax({url: 'getVIPItems'})
+    } else {
+        let items = yield $.ajax({url: 'getItems'})
+    }
+})
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>// yield 实例，用同步方式写异步
+server.use(function * () {
+    let data = yield db.query(`select * from user_table`)
+    this.body = data
+})
+</code></pre></div><h2 id="generator实例-koa"><a href="#generator实例-koa" class="header-anchor">#</a> generator实例-KOA</h2> <div class="language- extra-class"><pre class="language-text"><code>const koa=require('koa');
+const mysql=require('koa-mysql');
+let db=mysql.createPool({host:'localhost',user:'root',password:'123456',database:'23'})
+let server=new koa();
+server.use(function *(){
+	let data=yield db.query('SELECT * FROM user_table');
+	this.body=data;
+})
+server.listen(8080)
+</code></pre></div><h2 id="es6总结复习"><a href="#es6总结复习" class="header-anchor">#</a> ES6总结复习</h2> <h3 id="变量"><a href="#变量" class="header-anchor">#</a> 变量</h3> <p>var  重复声明、函数级</p> <p>let  不能重复声明、块级、变量</p> <p>const  不能重复声明、块级、常量</p> <h3 id="箭头函数-2"><a href="#箭头函数-2" class="header-anchor">#</a> 箭头函数</h3> <p>方便</p> <ul><li>如果只有一个参数，()可以省</li> <li>如果只有一个return，{}也可以省</li></ul> <p>修正this</p> <ul><li>this是相对正常点</li></ul> <h3 id="参数扩展-2"><a href="#参数扩展-2" class="header-anchor">#</a> 参数扩展</h3> <p>能收集，能扩展</p> <h3 id="数组方法"><a href="#数组方法" class="header-anchor">#</a> 数组方法</h3> <ul><li>map 映射</li> <li>reduce 汇总，一堆-&gt;一个</li> <li>filter 过滤</li> <li>forEach 循环迭代</li></ul> <h3 id="字符串-2"><a href="#字符串-2" class="header-anchor">#</a> 字符串</h3> <ul><li><p>startsWith/endsWith</p></li> <li><p>字符串模板：<code>${a}xxx${b}</code></p></li></ul> <h3 id="promise-2"><a href="#promise-2" class="header-anchor">#</a> Promise</h3> <p>封装异步的操作</p> <p>Promise.all([]);</p> <h3 id="generator"><a href="#generator" class="header-anchor">#</a> generator</h3> <p>执行到一半能暂停的函数</p> <div class="language- extra-class"><pre class="language-text"><code>function *show(){
+	yield
+}
+</code></pre></div><h3 id="json-2"><a href="#json-2" class="header-anchor">#</a> JSON</h3> <ul><li>JSON.stringify({a:12,b:5}) =&gt; '{&quot;a&quot;: 12, &quot;b&quot;: 5}'</li> <li>JSON.parse('{&quot;a&quot;:12,&quot;b&quot;:5}')=&gt;{a:12,b:5}</li></ul> <h3 id="面向对象"><a href="#面向对象" class="header-anchor">#</a> 面向对象</h3> <div class="language- extra-class"><pre class="language-text"><code>//类的基本写法
+class Test{
+	constructor(){
+		this.xx
+	}
+	方法1(){
+	
+	}
+	方法2(){
+	
+	}
+}
+
+//类的继承写法
+class Cls2 extends Cls1{
+	constructor(){
+		super();
+	}
+}
+</code></pre></div><h3 id="解构赋值-2"><a href="#解构赋值-2" class="header-anchor">#</a> 解构赋值</h3> <p>let [a,b,c]=[12,5,8]</p> <ul><li><p>左右结构一样</p></li> <li><p>右边是个合法的东西</p></li> <li><p>声明、赋值一次完成</p></li></ul> <h2 id="es7预览"><a href="#es7预览" class="header-anchor">#</a> ES7预览</h2> <h3 id="数组-2"><a href="#数组-2" class="header-anchor">#</a> 数组</h3> <ul><li><code>arr.includes()</code> 数组是否包含某个东西</li> <li>数组的 arr.keys(), arr,entries()</li> <li>for ... in 遍历数组 下标 key</li> <li>for ... of 遍历数组 值 value, 不能用于json</li></ul> <div class="language- extra-class"><pre class="language-text"><code>let arr = ['a', 'b', 'c']
+console.log(arr.includes(1))
+
+for (let i in arr) {
+    console.log(i) // 循环的时下标 key
+}
+
+for (let i of arr) {
+    console.log(i) // 循环的是值 value
+}
+for (let i of arr.keys()) {
+    console.log('&gt;'+i)
+}
+for (let [key, value] of arr.entries()) {
+    console.log('&gt;' + key + value)
+}
+
+let json = { a: 12, b: 5, c: 7 }
+for (let i in json) {
+    console.log(i)
+}
+</code></pre></div><h3 id="字符串-3"><a href="#字符串-3" class="header-anchor">#</a> 字符串</h3> <ul><li>padStart()/padEnd() 指定宽度，不够就补空格或指定字符</li></ul> <div class="language- extra-class"><pre class="language-text"><code>console.log('=' + 'abcd'.padStart(6, '0') + '=')
+console.log('=' + 'abcd'.padEnd(6, '0') + '=')
+=00abcd=
+=abcd00=
+</code></pre></div><h3 id="容忍度"><a href="#容忍度" class="header-anchor">#</a> 容忍度</h3> <ul><li>[1, 2, 3,] 老版数组最后不能有逗号，新的可以有</li> <li>函数参数最后多的逗号也可以</li></ul> <h3 id="async-await"><a href="#async-await" class="header-anchor">#</a> async await</h3> <ul><li>和 generator yield 类似</li> <li>generator 不可以写成箭头函数， async 可以</li></ul> <div class="language- extra-class"><pre class="language-text"><code>async function show() {
+    console.log(1)
+    await
+    console.log(2)
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/page4/题目.html" class="prev">
+        题目
+      </a></span> <span class="next"><a href="/page5/promise.html">
+        promise
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3f0b164.js" defer></script><script src="/assets/js/2.284f78c8.js" defer></script><script src="/assets/js/35.d2d4f756.js" defer></script>
+  </body>
+</html>

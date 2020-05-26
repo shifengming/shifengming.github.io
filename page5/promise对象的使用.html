@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>promise对象的使用 | ming的个人网站</title>
+    <meta name="description" content="Welcome to come to my blog">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.70f2d267.css" as="style"><link rel="preload" href="/assets/js/app.f3f0b164.js" as="script"><link rel="preload" href="/assets/js/2.284f78c8.js" as="script"><link rel="preload" href="/assets/js/34.a20acac1.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bd6822.js"><link rel="prefetch" href="/assets/js/11.7be908fe.js"><link rel="prefetch" href="/assets/js/12.71222861.js"><link rel="prefetch" href="/assets/js/13.0e9f2f34.js"><link rel="prefetch" href="/assets/js/14.70e31408.js"><link rel="prefetch" href="/assets/js/15.8e83af5f.js"><link rel="prefetch" href="/assets/js/16.3f82f6aa.js"><link rel="prefetch" href="/assets/js/17.9c893c24.js"><link rel="prefetch" href="/assets/js/18.8ce12f88.js"><link rel="prefetch" href="/assets/js/19.4539c1e6.js"><link rel="prefetch" href="/assets/js/20.8d6b15a2.js"><link rel="prefetch" href="/assets/js/21.aa90be3e.js"><link rel="prefetch" href="/assets/js/22.0741e8cf.js"><link rel="prefetch" href="/assets/js/23.26e38199.js"><link rel="prefetch" href="/assets/js/24.437832b0.js"><link rel="prefetch" href="/assets/js/25.3ac7a3f9.js"><link rel="prefetch" href="/assets/js/26.f3036c64.js"><link rel="prefetch" href="/assets/js/27.85d3ca2e.js"><link rel="prefetch" href="/assets/js/28.f59e28e7.js"><link rel="prefetch" href="/assets/js/29.74627ca0.js"><link rel="prefetch" href="/assets/js/3.c17543fc.js"><link rel="prefetch" href="/assets/js/30.7b42eae2.js"><link rel="prefetch" href="/assets/js/31.9c88f4b6.js"><link rel="prefetch" href="/assets/js/32.3302434b.js"><link rel="prefetch" href="/assets/js/33.bd99df5c.js"><link rel="prefetch" href="/assets/js/35.d2d4f756.js"><link rel="prefetch" href="/assets/js/36.18286c43.js"><link rel="prefetch" href="/assets/js/37.84831a8a.js"><link rel="prefetch" href="/assets/js/38.ce143c7c.js"><link rel="prefetch" href="/assets/js/39.11e44bd7.js"><link rel="prefetch" href="/assets/js/4.24ba765a.js"><link rel="prefetch" href="/assets/js/40.cb8f8018.js"><link rel="prefetch" href="/assets/js/41.f6a28df9.js"><link rel="prefetch" href="/assets/js/42.fbd48b3c.js"><link rel="prefetch" href="/assets/js/43.131d6d97.js"><link rel="prefetch" href="/assets/js/44.2c119204.js"><link rel="prefetch" href="/assets/js/45.198a5b50.js"><link rel="prefetch" href="/assets/js/46.c2f0e139.js"><link rel="prefetch" href="/assets/js/47.71dfa535.js"><link rel="prefetch" href="/assets/js/48.cb8ad619.js"><link rel="prefetch" href="/assets/js/49.cbeee829.js"><link rel="prefetch" href="/assets/js/5.e87ba801.js"><link rel="prefetch" href="/assets/js/50.ff87b9b9.js"><link rel="prefetch" href="/assets/js/51.8943f310.js"><link rel="prefetch" href="/assets/js/52.f08a077e.js"><link rel="prefetch" href="/assets/js/53.5b096969.js"><link rel="prefetch" href="/assets/js/54.39e8487d.js"><link rel="prefetch" href="/assets/js/55.581e549d.js"><link rel="prefetch" href="/assets/js/56.d60cbfa0.js"><link rel="prefetch" href="/assets/js/6.b35a0751.js"><link rel="prefetch" href="/assets/js/7.aa04d747.js"><link rel="prefetch" href="/assets/js/8.2805aa08.js"><link rel="prefetch" href="/assets/js/9.2159abe2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.70f2d267.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ming的个人网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page5/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page5/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS3</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JQuery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>ES6</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/page5/深入解读es6.html" class="sidebar-link">深入解读es6</a></li><li><a href="/page5/promise.html" class="sidebar-link">promise</a></li><li><a href="/page5/promise对象的使用.html" class="active sidebar-link">promise对象的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#什么是异步编程？" class="sidebar-link">什么是异步编程？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#关于异步的解决方案目前有四种：" class="sidebar-link">关于异步的解决方案目前有四种：</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#解决（fulfill）" class="sidebar-link">解决（fulfill）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#拒绝（reject）" class="sidebar-link">拒绝（reject）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#终值（eventual-value）" class="sidebar-link">终值（eventual value）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#据因（reason）" class="sidebar-link">据因（reason）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#promise" class="sidebar-link">Promise</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#thenable" class="sidebar-link">thenable</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#值（value）" class="sidebar-link">值（value）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#异常（exception）" class="sidebar-link">异常（exception）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#回调地域" class="sidebar-link">回调地域</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#并行结果" class="sidebar-link">并行结果</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#等待态（pending）" class="sidebar-link">等待态（Pending）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#执行态（fulfilled）" class="sidebar-link">执行态（Fulfilled）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#拒绝态（rejected）" class="sidebar-link">拒绝态（Rejected）</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#onfulfilled特性" class="sidebar-link">onFulfilled特性</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#onrejected特性" class="sidebar-link">onRejected特性</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#调用时机" class="sidebar-link">调用时机</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#调用要求" class="sidebar-link">调用要求</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#多次调用" class="sidebar-link">多次调用</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#返回" class="sidebar-link">返回</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#一个最基本的promise长什么样？" class="sidebar-link">一个最基本的Promise长什么样？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#原生的promise它的参数不是函数的时，会发生什么？" class="sidebar-link">原生的promise它的参数不是函数的时，会发生什么？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#这是一个最基本的promise" class="sidebar-link">这是一个最基本的promise</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#再把上边代码测试一下" class="sidebar-link">再把上边代码测试一下</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#把上边的代码进行优化" class="sidebar-link">把上边的代码进行优化</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#测试通过后，下一步then方法" class="sidebar-link">测试通过后，下一步then方法</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#将上边的代码再次进行优化" class="sidebar-link">将上边的代码再次进行优化</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#先看一下这段代码的执行顺序是什么样的？" class="sidebar-link">先看一下这段代码的执行顺序是什么样的？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#在测试文件运行这段代码执行顺序会是什么样？" class="sidebar-link">在测试文件运行这段代码执行顺序会是什么样？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#如何来模拟异步呢？" class="sidebar-link">如何来模拟异步呢？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#假如在test-js里面抛出一个异常，会是怎么样？" class="sidebar-link">假如在test.js里面抛出一个异常，会是怎么样？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#假设我们把代码放原生的promise里，会是怎样？" class="sidebar-link">假设我们把代码放原生的promise里，会是怎样？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#如果是test-js里是异步的会是什么样？" class="sidebar-link">如果是test.js里是异步的会是什么样？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#在promise-js里追加一个状态的判断" class="sidebar-link">在promise.js里追加一个状态的判断</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#如何实现链式调用" class="sidebar-link">如何实现链式调用</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#如何才能做到链式调用呢？" class="sidebar-link">如何才能做到链式调用呢？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#当返回值不是一个普通数值或一个基本类型，会是什么样情况？" class="sidebar-link">当返回值不是一个普通数值或一个基本类型，会是什么样情况？</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#在promise-js里面处理一下" class="sidebar-link">在promise.js里面处理一下</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#首先" class="sidebar-link">首先</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#然后" class="sidebar-link">然后</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#最后" class="sidebar-link">最后</a></li><li class="sidebar-sub-header"><a href="/page5/promise对象的使用.html#源码地址" class="sidebar-link">源码地址</a></li></ul></li><li><a href="/page5/题目.html" class="sidebar-link">题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Http请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="promise对象的使用"><a href="#promise对象的使用" class="header-anchor">#</a> promise对象的使用</h1> <h2 id="什么是异步编程？"><a href="#什么是异步编程？" class="header-anchor">#</a> 什么是异步编程？</h2> <ul><li><p>从服务器获取数据，这个过程就叫做异步编程</p></li> <li><p>在node.js中去读取文件，这个过程也是异步的</p></li></ul> <h2 id="关于异步的解决方案目前有四种："><a href="#关于异步的解决方案目前有四种：" class="header-anchor">#</a> 关于异步的解决方案目前有四种：</h2> <ul><li>callback(回调函数)</li> <li>generato + co库</li> <li>promise</li> <li>async+await</li></ul> <h1 id="学习之前"><a href="#学习之前" class="header-anchor">#</a> 学习之前</h1> <p>在学习之前我们需要弄懂以下的：</p> <ul><li>了解Promise</li> <li>es6   (主要是es6的箭头函数和es6的类)</li> <li>this的指向问题</li> <li>关于promise/A+规范</li></ul> <div class="language- extra-class"><pre class="language-text"><code>参考文档：https://promisesaplus.com/
+</code></pre></div><h1 id="术语"><a href="#术语" class="header-anchor">#</a> 术语</h1> <h2 id="解决（fulfill）"><a href="#解决（fulfill）" class="header-anchor">#</a> 解决（fulfill）</h2> <p>指一个 promise 成功时进行的一系列操作，如状态的改变、回调的执行。虽然规范中用 fulfill 来表示解决，但在后世的 promise 实现多以 resolve 来指代之</p> <h2 id="拒绝（reject）"><a href="#拒绝（reject）" class="header-anchor">#</a> 拒绝（reject）</h2> <p>指一个 promise失败时进行的一系列操作</p> <h2 id="终值（eventual-value）"><a href="#终值（eventual-value）" class="header-anchor">#</a> 终值（eventual value）</h2> <p>所谓终值，指的是 promise 被解决时传递给解决回调的值，由于 promise 有一次性的特征，因此当这个值被传递时，标志着 promise 等待态的结束，故称之终值，有时也直接简称为值（value）</p> <h2 id="据因（reason）"><a href="#据因（reason）" class="header-anchor">#</a> 据因（reason）</h2> <p>也就是拒绝原因，指在 promise 被拒绝时传递给拒绝回调的值</p> <h2 id="promise"><a href="#promise" class="header-anchor">#</a> Promise</h2> <p>promise是一个拥有then方法的对象或函数，其行为符合本规范</p> <h2 id="thenable"><a href="#thenable" class="header-anchor">#</a> thenable</h2> <p>是一个定义了then方法的对象或函数</p> <h2 id="值（value）"><a href="#值（value）" class="header-anchor">#</a> 值（value）</h2> <p>指任何JavaScript的合法值（包括undefined、thenable和promise）</p> <h2 id="异常（exception）"><a href="#异常（exception）" class="header-anchor">#</a> 异常（exception）</h2> <p>是适用throw语句抛出的一个值</p> <h1 id="异步回调"><a href="#异步回调" class="header-anchor">#</a> 异步回调</h1> <h2 id="回调地域"><a href="#回调地域" class="header-anchor">#</a> 回调地域</h2> <p>在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱</p> <h2 id="并行结果"><a href="#并行结果" class="header-anchor">#</a> 并行结果</h2> <p>如果几个异步操作之间并没有前后顺序之分,但需要等多个异步操作都完成后才能执行后续的任务，无法实现并行节约时间</p> <h1 id="promise理解"><a href="#promise理解" class="header-anchor">#</a> promise理解</h1> <p>Promise本意是承诺，在程序中的意思就是承诺我过一段时间后会给你一个结果：</p> <p>什么时候会用到过一段时间？</p> <p>是异步操作</p> <p>异步是指可能比较长时间才有结果的才做，例如网络请求、读取本地文件等</p> <h1 id="promise的状态"><a href="#promise的状态" class="header-anchor">#</a> Promise的状态</h1> <blockquote><p>一个Promise的当前状态必须为以下三种状态中的一种</p></blockquote> <h2 id="等待态（pending）"><a href="#等待态（pending）" class="header-anchor">#</a> 等待态（Pending）</h2> <blockquote><p>处于等待态时，promise需满足以下条件：</p></blockquote> <p>可以迁移至执行态或拒绝态</p> <h2 id="执行态（fulfilled）"><a href="#执行态（fulfilled）" class="header-anchor">#</a> 执行态（Fulfilled）</h2> <blockquote><p>处于执行态时，promise 需满足以下条件：</p></blockquote> <p>不能迁移至其他任何状态</p> <p>必须拥有一个不可变的终值</p> <h2 id="拒绝态（rejected）"><a href="#拒绝态（rejected）" class="header-anchor">#</a> 拒绝态（Rejected）</h2> <blockquote><p>处于拒绝态时，promise需要满足以下条件</p></blockquote> <p>不能迁移至其他任何状态</p> <p>必须拥有一个不可变的据因</p> <h1 id="then方法"><a href="#then方法" class="header-anchor">#</a> Then方法</h1> <blockquote><p>一个promise必须提供一个then方法以访问其当前值、终值和据因</p></blockquote> <p><strong>promise的then方法接受两个参数：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>promise.then(onFulfilled, onRejected)
+</code></pre></div><p><strong>onFulfilled 和 onRejected 都是可选参数</strong></p> <ul><li>如果onFullfilled不是函数，其必须被忽略</li> <li>如果onRejected不是函数，其必须被忽略</li></ul> <h2 id="onfulfilled特性"><a href="#onfulfilled特性" class="header-anchor">#</a> onFulfilled特性</h2> <blockquote><p>如果onFulfilled是函数：</p></blockquote> <ul><li>当promise执行结束后其必须被调用，其第一个参数为promise的终值</li> <li>在promise执行结束前其不可被调用</li> <li>其调用次数不可超过一次</li></ul> <h2 id="onrejected特性"><a href="#onrejected特性" class="header-anchor">#</a> onRejected特性</h2> <blockquote><p>如果onRejected是函数：</p></blockquote> <ul><li>当 promise 被拒绝执行后其必须被调用，其第一个参数为 promise 的据因</li> <li>在 promise 被拒绝执行前其不可被调用</li> <li>其调用次数不可超过一次</li></ul> <h2 id="调用时机"><a href="#调用时机" class="header-anchor">#</a> 调用时机</h2> <p>onFulfilled 和 onRejected 只有在执行环境堆栈仅包含平台代码时才可被调用</p> <h2 id="调用要求"><a href="#调用要求" class="header-anchor">#</a> 调用要求</h2> <p>onFulfilled 和 onRejected 必须被作为函数调用（即没有 this 值）</p> <h2 id="多次调用"><a href="#多次调用" class="header-anchor">#</a> 多次调用</h2> <blockquote><p>then 方法可以被同一个promise调用多次</p></blockquote> <ul><li><p>当 promise 成功执行时，所有 onFulfilled 需按照其注册顺序依次回调</p></li> <li><p>当 promise 被拒绝执行时，所有的 onRejected 需按照其注册顺序依次回调</p></li></ul> <h2 id="返回"><a href="#返回" class="header-anchor">#</a> 返回</h2> <p>then 方法必须返回一个 promise 对象</p> <h1 id="准备"><a href="#准备" class="header-anchor">#</a> 准备</h1> <blockquote><p>在开始之前我们需要创建三个文件</p></blockquote> <ul><li>index.js进行原生的Promise演示</li> <li>promise.js进行自定义的Promise演示</li> <li>test.js是对promise.js进行测试</li></ul> <h1 id="promise初体验"><a href="#promise初体验" class="header-anchor">#</a> promise初体验</h1> <h2 id="一个最基本的promise长什么样？"><a href="#一个最基本的promise长什么样？" class="header-anchor">#</a> 一个最基本的Promise长什么样？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+        resolve(1)
+    })
+}).then(value =&gt; {
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>value 1
+</code></pre></div><h2 id="原生的promise它的参数不是函数的时，会发生什么？"><a href="#原生的promise它的参数不是函数的时，会发生什么？" class="header-anchor">#</a> 原生的promise它的参数不是函数的时，会发生什么？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>new Promise(1)
+</code></pre></div><p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+    }
+}
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>Promise resolver 1 is not a function
+</code></pre></div><h2 id="这是一个最基本的promise"><a href="#这是一个最基本的promise" class="header-anchor">#</a> 这是一个最基本的promise</h2> <blockquote><p>代码如下</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+    console.log('早上好！')
+        resolve(1)
+})
+</code></pre></div><p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+        const resolve = function (){
+
+        }
+        const reject = function (){
+
+        }
+        executor(resolve,reject)
+    }
+}
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>早上好！
+</code></pre></div><h2 id="再把上边代码测试一下"><a href="#再把上边代码测试一下" class="header-anchor">#</a> 再把上边代码测试一下</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+  constructor(executor){
+      //不能相信用户的输入，所以这里要做参数效验
+      if(typeof executor !== 'function'){
+          throw new TypeError('Promise resolver ${executor} is not a function')
+      }
+      //记录状态和值的改变
+      //初始化值
+      this.value = null //终值
+      this.reason = null //拒因
+      this.state = 'pending' //状态
+
+      const resolve = value =&gt; {
+          //成功后的一系列操作（状态的改变，成功回调的执行）
+          if(this.state === 'pending'){
+              //状态进行改变
+              this.state = 'fulfilled'
+              //执行成功的回调，把终值进行赋值
+              this.value = value
+          }
+      }
+      const reject = reason =&gt;{
+          //失败后的一系列操作（状态的改变，失败回调的执行）
+          if(this.state === 'pending'){
+              //状态进行改变
+              this.state = 'rejected'
+              //执行成功的回调，把据因进行赋值
+              this.reason = reason
+          }
+      }
+      executor(resolve,reject)
+  }
+}
+module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    console.log('早上好！')
+        resolve(1)
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>早上好！
+</code></pre></div><h1 id="promise初步实现"><a href="#promise初步实现" class="header-anchor">#</a> promise初步实现</h1> <h2 id="把上边的代码进行优化"><a href="#把上边的代码进行优化" class="header-anchor">#</a> 把上边的代码进行优化</h2> <blockquote><p>优化后的代码如下</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        executor(this.resolve,this.reject)
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = 'pending' //状态
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = 'fulfilled'
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+        }
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = 'rejected'
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+        }
+    }
+    then() {}
+}
+module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    console.log('早上好！')
+        resolve(1)
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>早上好！
+</code></pre></div><h2 id="测试通过后，下一步then方法"><a href="#测试通过后，下一步then方法" class="header-anchor">#</a> 测试通过后，下一步then方法</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        executor(this.resolve,this.reject)
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = 'pending' //状态
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = 'fulfilled'
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+        }
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = 'rejected'
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+        }
+    }
+    then(onFulfilled, onRejected) {
+        //  参数效验
+        if (typeof onFulfilled !== 'function'){
+            onFulfilled = function(value) {
+                return value
+            }
+        }
+        if (typeof onRejected !== 'function'){
+            onRejected = function(reason){
+                throw reason
+            }
+        }
+        if(this.state === 'fulfilled'){
+            onFulfilled(this.value)
+        }
+        if(this.state === 'rejected'){
+            onRejected(this.reason)
+        }
+    }
+}
+module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    console.log('早上好！')
+        resolve(1)
+}).then(value=&gt; {
+    console.log('value',value)
+},reason =&gt; {   
+    console.log('reason',value)
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>早上好！
+value 1
+</code></pre></div><h2 id="将上边的代码再次进行优化"><a href="#将上边的代码再次进行优化" class="header-anchor">#</a> 将上边的代码再次进行优化</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        executor(this.resolve,this.reject)
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = Promise.PENDING //状态
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === Promise.PENDING){
+            //状态进行改变
+            this.state = Promise.FULFILLED
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+        }
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = Promise.REJECTED
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+        }
+    }
+    then(onFulfilled, onRejected) {
+        //  参数效验
+        if (typeof onFulfilled !== 'function'){
+            onFulfilled = function(value) {
+                return value
+            }
+        }
+        if (typeof onRejected !== 'function'){
+            onRejected = function(reason){
+                throw reason
+            }
+        }
+        if(this.state === Promise.FULFILLED){
+            onFulfilled(this.value)
+        }
+        if(this.state === Promise.REJECTED){
+            onRejected(this.reason)
+        }
+    }
+}
+Promise.PENDING = 'pending'
+Promise.FULFILLED = 'fulfilled'
+Promise.REJECTED = 'reject'
+
+module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    console.log('早上好！')
+        resolve(1)
+}).then(value=&gt; {
+    console.log('value',value)
+},reason =&gt; {   
+    console.log('reason',value)
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>早上好！
+value 1
+</code></pre></div><h1 id="异步解决实现"><a href="#异步解决实现" class="header-anchor">#</a> 异步解决实现</h1> <h2 id="先看一下这段代码的执行顺序是什么样的？"><a href="#先看一下这段代码的执行顺序是什么样的？" class="header-anchor">#</a> 先看一下这段代码的执行顺序是什么样的？</h2> <blockquote><p>代码如下</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>console.log('1')
+new Promise((resolve, reject) =&gt; {
+    console.log('2')
+        resolve(1)
+    }).then(value =&gt; {
+    console.log('4')
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+2
+3
+4
+value 1
+</code></pre></div><h2 id="在测试文件运行这段代码执行顺序会是什么样？"><a href="#在测试文件运行这段代码执行顺序会是什么样？" class="header-anchor">#</a> 在测试文件运行这段代码执行顺序会是什么样？</h2> <blockquote><p>代码如下</p></blockquote> <p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+console.log('1')
+new Promise((resolve, reject) =&gt; {
+    console.log('2')
+        resolve(1)
+    }).then(value =&gt; {
+    console.log('4')//立即执行了
+    console.log('value',value)//立即执行了
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+2
+4
+value 1
+3
+</code></pre></div><h2 id="如何来模拟异步呢？"><a href="#如何来模拟异步呢？" class="header-anchor">#</a> 如何来模拟异步呢？</h2> <p>在promise.js里面添加代码，利用setTimeout,再运行test.js</p> <blockquote><p>代码如下：</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        try{
+            executor(this.resolve, this.reject)
+        }catch(e){
+            this.reject(e)
+        }
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = Promise.PENDING //状态
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === Promise.PENDING){
+            //状态进行改变
+            this.state = Promise.FULFILLED
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+        }
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = Promise.REJECTED
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+        }
+    }
+    then(onFulfilled, onRejected) {
+        //  参数效验
+        if (typeof onFulfilled !== 'function'){
+            onFulfilled = function(value) {
+                return value
+            }
+        }
+        if (typeof onRejected !== 'function'){
+            onRejected = function(reason){
+                throw reason
+            }
+        }
+        if(this.state === Promise.FULFILLED){
+            setTimeout(() =&gt; {
+                onFulfilled(this.value)
+            })
+        }
+        if(this.state === Promise.REJECTED){
+            setTimeout(() =&gt; {
+                onRejected(this.reason)
+            })
+        }
+    }
+}
+Promise.PENDING = 'pending'
+Promise.FULFILLED = 'fulfilled'
+Promise.REJECTED = 'reject'
+
+module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+console.log('1')
+new Promise((resolve, reject) =&gt; {
+    console.log('2')
+        resolve(1)
+    }).then(value =&gt; {
+    console.log('4')
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+2
+3
+4
+value 1
+</code></pre></div><h2 id="假如在test-js里面抛出一个异常，会是怎么样？"><a href="#假如在test-js里面抛出一个异常，会是怎么样？" class="header-anchor">#</a> 假如在test.js里面抛出一个异常，会是怎么样？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+console.log('1')
+new Promise((resolve, reject) =&gt; {
+    throw new Error('You write wrong')
+    // console.log('2')
+        resolve(1)
+    }).then(value =&gt; {
+    console.log('4')
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+3
+reason Error: You write wrong
+</code></pre></div><p>上边是直接在最外层进行一个抛出</p> <h2 id="假设我们把代码放原生的promise里，会是怎样？"><a href="#假设我们把代码放原生的promise里，会是怎样？" class="header-anchor">#</a> 假设我们把代码放原生的promise里，会是怎样？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+console.log('1')
+new Promise((resolve, reject) =&gt; {
+    throw new Error('You write wrong')
+    // console.log('2')
+        resolve(1)
+    }).then(value =&gt; {
+    console.log('4')
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+3
+reason Error: You write wrong
+</code></pre></div><h2 id="如果是test-js里是异步的会是什么样？"><a href="#如果是test-js里是异步的会是什么样？" class="header-anchor">#</a> 如果是test.js里是异步的会是什么样？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+console.log('1')
+new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            console.log('hello!')
+            resolve(1)
+        })
+    }).then(value =&gt; {
+    console.log('4')
+    console.log('value',value)
+},reason =&gt; {
+    console.log('reason',reason)
+})
+console.log('3')
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+3
+hello!
+</code></pre></div><p><strong>不知道大家有没有发现 '4' 没有执行，这是什么原因呢？</strong></p> <p>因为此时并没有直接进入setTimeout里面，而是进行了.then操作
+<img src="https://user-gold-cdn.xitu.io/2020/1/18/16fb947d198dd677?w=384&amp;h=394&amp;f=png&amp;s=31144" alt="cmd-markdown-logo">
+我们在promise.js里面看到，</p> <p>此时.then操作的状态等于'pending',</p> <p>它不等于'fulfilled',也不等于'reject',</p> <p>所以它并没有执行这两个回调函数中的任意一个，所以.then方法并没有执行
+<img src="https://user-gold-cdn.xitu.io/2020/1/18/16fb9486f497074e?w=624&amp;h=508&amp;f=png&amp;s=45586" alt="cmd-markdown-logo"> <strong>怎么解决这个问题呢？</strong></p> <blockquote><p>首先在promise.js里面肯定要追加一个状态的判断</p></blockquote> <h2 id="在promise-js里追加一个状态的判断"><a href="#在promise-js里追加一个状态的判断" class="header-anchor">#</a> 在promise.js里追加一个状态的判断</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        try{
+            executor(this.resolve, this.reject)
+        }catch(e){
+            this.reject(e)
+        }
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = Promise.PENDING //状态
+        this.onFulfilledCallbacks = []//成功回调
+        this.onRejectedCallbacks = [] //失败回调
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === Promise.PENDING){
+            //状态进行改变
+            this.state = Promise.FULFILLED
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+            //成功或者失败以后进行这两个数组的执行
+            this.onFulfilledCallbacks.forEach((fn) =&gt; fn(this.value)
+            )}
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = Promise.REJECTED
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+            this.onRejectedCallbacks.forEach(fn =&gt; fn(this.reason))
+        }
+    }
+    then(onFulfilled, onRejected) {
+        //  参数效验
+        if (typeof onFulfilled !== 'function'){
+            onFulfilled = function(value) {
+                return value
+            }
+        }
+        if (typeof onRejected !== 'function'){
+            onRejected = function(reason){
+                throw reason
+            }
+        }
+        if(this.state === Promise.FULFILLED){
+            setTimeout(() =&gt; {
+                onFulfilled(this.value)
+            })
+        }
+        if(this.state === Promise.REJECTED){
+            setTimeout(() =&gt; {
+                onRejected(this.reason)
+            })
+        }
+        //在promise.js里面肯定要追加一个状态的判断
+        if(this.state === Promise.PENDING){
+            this.onFulfilledCallbacks.push((value) =&gt; {
+                setTimeout(() =&gt; {
+                    onFulfilled(value)
+                })
+            })
+            this.onRejectedCallbacks.push((reason) =&gt; {
+                setTimeout(() =&gt; {
+                    onRejected(this.reason)
+                })
+            })
+        }
+    }
+}
+Promise.PENDING = 'pending'
+Promise.FULFILLED = 'fulfilled'
+Promise.REJECTED = 'reject'
+
+module.exports = Promise
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>1
+3
+hello!
+4
+value 1
+</code></pre></div><h1 id="链式调用的简单解决方案"><a href="#链式调用的简单解决方案" class="header-anchor">#</a> 链式调用的简单解决方案</h1> <h2 id="如何实现链式调用"><a href="#如何实现链式调用" class="header-anchor">#</a> 如何实现链式调用</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+        resolve(1)
+    })
+    .then(
+        value =&gt; {
+         return 'good' + value
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+    }
+    )
+    .then(
+        value =&gt; {
+        console.log('value',value)
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+}
+)
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>value good1
+</code></pre></div><h2 id="如何才能做到链式调用呢？"><a href="#如何才能做到链式调用呢？" class="header-anchor">#</a> 如何才能做到链式调用呢？</h2> <p>实现链式调用，且改变了后面的then的值，必须通过新的实例</p> <blockquote><p>代码如下：</p></blockquote> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>new Promise((resolve, reject) =&gt; {
+    // throw new Error('You write wrong')
+    // console.log('2')
+        resolve(1)
+    })
+    .then(
+        value =&gt; {
+         throw new Error('use')
+         return 'good' + value
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+    }
+    )
+    .then(
+        value =&gt; {
+        console.log('value',value)
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+}
+)
+</code></pre></div><p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor){
+        //不能相信用户的输入，所以这里要做参数效验
+        if(typeof executor !== 'function'){
+            throw new TypeError('Promise resolver ${executor} is not a function')
+        }
+
+        this.initValue()
+        this.initBind()
+
+        try{
+            executor(this.resolve, this.reject)
+        }catch(e){
+            this.reject(e)
+        }
+    }
+    //绑定 this
+    initBind(){
+        this.resolve = this.resolve.bind(this)
+        this.reject = this.reject.bind(this)
+    }
+    //进行代码的优化
+    initValue(){
+        //记录状态和值的改变
+        //初始化值
+        this.value = null //终值
+        this.reason = null //拒因
+        this.state = Promise.PENDING //状态
+        this.onFulfilledCallbacks = []//成功回调
+        this.onRejectedCallbacks = [] //失败回调
+    }
+    resolve(value){
+        //成功后的一系列操作（状态的改变，成功回调的执行）
+        if(this.state === Promise.PENDING){
+            //状态进行改变
+            this.state = Promise.FULFILLED
+            //执行成功的回调，把终值进行赋值
+            this.value = value
+            //成功或者失败以后进行这两个数组的执行
+            this.onFulfilledCallbacks.forEach((fn) =&gt; fn(this.value)
+            )}
+    }
+    reject(reason){
+        //失败后的一系列操作（状态的改变，失败回调的执行）
+        if(this.state === 'pending'){
+            //状态进行改变
+            this.state = Promise.REJECTED
+            //执行成功的回调，把据因进行赋值
+            this.reason = reason
+            this.onRejectedCallbacks.forEach(fn =&gt; fn(this.reason))
+        }
+    }
+    then(onFulfilled, onRejected) {
+        //  参数效验
+        if (typeof onFulfilled !== 'function'){
+            onFulfilled = function(value) {
+                return value
+            }
+        }
+        if (typeof onRejected !== 'function'){
+            onRejected = function(reason){
+                throw reason
+            }
+        }
+        // 实现链式调用，且改变了后面的then的值，必须通过新的实例
+        let promise2 = new Promise((resolve, reject) =&gt; {
+            if(this.state === Promise.FULFILLED){
+                setTimeout(() =&gt; {
+                    try{
+                        const x = onFulfilled(this.value)
+                        resolve(x)
+                    }catch(e){
+                        reject(e)
+                    }
+                })
+            }
+            if(this.state === Promise.REJECTED){
+                setTimeout(() =&gt; {
+                    try{
+                        const x = onRejected(this.reason)
+                        resolve(x)
+                    }catch(e){
+                        reject(e)
+                    }
+                })
+            }
+            //在promise.js里面肯定要追加一个状态的判断
+            if(this.state === Promise.PENDING){
+                this.onFulfilledCallbacks.push((value) =&gt; {
+                    setTimeout(() =&gt; {
+                        try{
+                            const x = onFulfilled(value)
+                            resolve(x)
+                        }catch(e){
+                            reject(e)
+                        }
+                    })
+                })
+                this.onRejectedCallbacks.push((reason) =&gt; {
+                    setTimeout(() =&gt; {
+                        try{
+                            const x = onRejected(this.reason)
+                            resolve(x)
+                        }catch(e){
+                            reject(e)
+                        }
+                    })
+                })
+            }
+        })
+        return promise2
+    }
+}
+Promise.PENDING = 'pending'
+Promise.FULFILLED = 'fulfilled'
+Promise.REJECTED = 'reject'
+Promise.resolvePromise = function(promise2, x, resolve, reject){}
+
+module.exports = Promise
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>reason Error: use
+</code></pre></div><h1 id="链式调用的终极解决方案和测试"><a href="#链式调用的终极解决方案和测试" class="header-anchor">#</a> 链式调用的终极解决方案和测试</h1> <h2 id="当返回值不是一个普通数值或一个基本类型，会是什么样情况？"><a href="#当返回值不是一个普通数值或一个基本类型，会是什么样情况？" class="header-anchor">#</a> 当返回值不是一个普通数值或一个基本类型，会是什么样情况？</h2> <blockquote><p>代码如下：</p></blockquote> <p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    // throw new Error('You write wrong')
+    // console.log('2')
+        resolve(1)
+    })
+    .then(
+        value =&gt; {
+         return new Promise((resolve) =&gt; {
+             resolve(1)
+         })
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+    }
+    )
+    .then(
+        value =&gt; {
+        console.log('value',value)
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+}
+)
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>value Promise {
+  value: 1,
+  reason: null,
+  state: 'fulfilled',
+  onFulfilledCallbacks: [],
+  onRejectedCallbacks: [],
+  resolve: [Function: bound resolve],
+  reject: [Function: bound reject] }
+</code></pre></div><p><strong>分析结果可知：</strong></p> <p>当x的值不是基本值的时候，而是promise实例得时候，必须等待这一个promise的时候结束，才能进行进一步执行
+<img src="https://user-gold-cdn.xitu.io/2020/1/19/16fbbeeff141ee0f?w=602&amp;h=327&amp;f=png&amp;s=26170" alt="cmd-markdown-logo">
+所以规范提出了一个解决方案
+针对resolvePromise的具体解决过程
+<img src="https://user-gold-cdn.xitu.io/2020/1/19/16fbbf120bafe8d7?w=668&amp;h=280&amp;f=png&amp;s=28283" alt="cmd-markdown-logo">
+首先是判断promise2和x的值是否是相等的</p> <p>如果相等的话，就抛出一个TypeError,是为了避免循环调用的问题</p> <p>我们可以通过代码看一下：</p> <p><strong>index.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>let p1 = new Promise((resolve) =&gt; {
+    resolve(1)
+})
+let p2 = p1.then(() =&gt; {
+    return p2
+})
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>TypeError: Chaining cycle detected for promise
+</code></pre></div><p>链式调用出现了问题</p> <h2 id="在promise-js里面处理一下"><a href="#在promise-js里面处理一下" class="header-anchor">#</a> 在promise.js里面处理一下</h2> <p><strong>promise.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>class Promise {
+    constructor(executor) {
+      // 参数校检
+      if (typeof executor !== 'function') {
+        throw new TypeError(`Promise resolver ${executor} is not a function`)
+      }
+  
+      this.initValue()
+      this.initBind()
+  
+      try {
+        executor(this.resolve, this.reject)
+      } catch (e) {
+        this.reject(e)
+      }
+    }
+  
+    // 绑定 this
+    initBind() {
+      this.resolve = this.resolve.bind(this)
+      this.reject = this.reject.bind(this)
+    }
+  
+    // 初始化值
+    initValue() {
+      this.value = null // 终值
+      this.reason = null // 拒因
+      this.state = Promise.PENDING // 状态
+      this.onFulfilledCallbacks = [] // 成功回调
+      this.onRejectedCallbacks = [] // 失败回调
+    }
+  
+    resolve(value) {
+      // 成功后的一系列操作(状态的改变, 成功回调的执行)
+      if (this.state === Promise.PENDING) {
+        this.state = Promise.FULFILLED
+        this.value = value
+        this.onFulfilledCallbacks.forEach(fn =&gt; fn(this.value))
+      }
+    }
+  
+    reject(reason) {
+      // 失败后的一系列操作(状态的改变, 失败回调的执行)
+      if (this.state === 'pending') {
+        this.state = Promise.REJECTED
+        this.reason = reason
+        this.onRejectedCallbacks.forEach(fn =&gt; fn(this.reason))
+      }
+    }
+  
+    then(onFulfilled, onRejected) {
+      // 参数校检
+      if (typeof onFulfilled !== 'function') {
+        onFulfilled = function(value) {
+          return value
+        }
+      }
+  
+      if (typeof onRejected !== 'function') {
+        onRejected = function(reason) {
+          throw reason
+        }
+      }
+  
+      // 实现链式调用, 且改变了后面then的值, 必须通过新的实例
+      let promise2 = new Promise((resolve, reject) =&gt; {
+        if (this.state === Promise.FULFILLED) {
+          setTimeout(() =&gt; {
+            try {
+              const x = onFulfilled(this.value)
+              Promise.resolvePromise(promise2, x, resolve, reject)
+            } catch (e) {
+              reject(e)
+            }
+          })
+        }
+  
+        if (this.state === Promise.REJECTED) {
+          setTimeout(() =&gt; {
+            try {
+              const x = onRejected(this.reason)
+              Promise.resolvePromise(promise2, x, resolve, reject)
+            } catch (e) {
+              reject(e)
+            }
+          })
+        }
+  
+        if (this.state === Promise.PENDING) {
+          this.onFulfilledCallbacks.push(value =&gt; {
+            setTimeout(() =&gt; {
+              try {
+                const x = onFulfilled(value)
+                Promise.resolvePromise(promise2, x, resolve, reject)
+              } catch (e) {
+                reject(e)
+              }
+            })
+          })
+  
+          this.onRejectedCallbacks.push(reason =&gt; {
+            setTimeout(() =&gt; {
+              try {
+                const x = onRejected(this.reason)
+                Promise.resolvePromise(promise2, x, resolve, reject)
+              } catch (e) {
+                reject(e)
+              }
+            })
+          })
+        }
+      })
+  
+      return promise2
+    }
+  }
+  
+  Promise.PENDING = 'pending'
+  Promise.FULFILLED = 'fulfilled'
+  Promise.REJECTED = 'reject'
+  Promise.resolvePromise = function(promise2, x, resolve, reject) {
+    // x 与 promise 相等
+    if (promise2 === x) {
+      reject(new TypeError('Chaining cycle detected for promise'))
+    }
+  
+    let called = false
+    if (x instanceof Promise) {
+      // 判断 x 为 Promise
+      x.then(
+        value =&gt; {
+          Promise.resolvePromise(promise2, value, resolve, reject)
+        },
+        reason =&gt; {
+          reject(reason)
+        }
+      )
+    } else if (x !== null &amp;&amp; (typeof x === 'object' || typeof x === 'function')) {
+      // x 为对象或函数
+      try {
+        const then = x.then
+        if (typeof then === 'function') {
+          then.call(
+            x,
+            value =&gt; {
+              if (called) return
+              called = true
+              Promise.resolvePromise(promise2, value, resolve, reject)
+            },
+            reason =&gt; {
+              if (called) return
+              called = true
+              reject(reason)
+            }
+          )
+        } else {
+          if (called) return
+          called = true
+          resolve(x)
+        }
+      } catch (e) {
+        if (called) return
+        called = true
+        reject(e)
+      }
+    } else {
+      resolve(x)
+    }
+  }
+  
+  module.exports = Promise
+</code></pre></div><p><strong>test.js</strong></p> <div class="language- extra-class"><pre class="language-text"><code>const Promise = require('./promise.js')
+
+new Promise((resolve, reject) =&gt; {
+    // throw new Error('You write wrong')
+    // console.log('2')
+        resolve(1)
+    })
+    .then(
+        value =&gt; {
+         return new Promise((resolve) =&gt; {
+             resolve(new Promise((resolve,reject) =&gt; {
+                 resolve('333')
+             })
+             )
+         })
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+    }
+    )
+    .then(
+        value =&gt; {
+        console.log('then 2 value:',value)
+    },
+    reason =&gt; {
+        console.log('reason',reason)
+}
+)
+</code></pre></div><p><strong>运行结果：</strong></p> <div class="language- extra-class"><pre class="language-text"><code>then 2 value: 333
+</code></pre></div><h1 id="如何验证我们的promise是否正确"><a href="#如何验证我们的promise是否正确" class="header-anchor">#</a> 如何验证我们的promise是否正确</h1> <h2 id="首先"><a href="#首先" class="header-anchor">#</a> 首先</h2> <p>我们需要安装一个promises-aplus-tests</p> <div class="language- extra-class"><pre class="language-text"><code>npm install promises-aplus-tests
+</code></pre></div><p>用来测试自己的promise 符不符合promisesA+规范</p> <h2 id="然后"><a href="#然后" class="header-anchor">#</a> 然后</h2> <p>把下边这段代码copy到promise.js里面</p> <div class="language- extra-class"><pre class="language-text"><code>Promise.defer = Promise.deferred = function () {
+  let dfd = {}
+  dfd.promise = new Promise((resolve,reject)=&gt;{
+    dfd.resolve = resolve;
+    dfd.reject = reject;
+  });
+  return dfd;
+}
+module.exports = Promise;
+</code></pre></div><h2 id="最后"><a href="#最后" class="header-anchor">#</a> 最后</h2> <p>执行输入npx promises-aplus-tests 你要测试的文件(promise.js)</p> <div class="language- extra-class"><pre class="language-text"><code>npx promises-aplus-tests promise.js
+</code></pre></div><p><img src="https://user-gold-cdn.xitu.io/2020/1/19/16fbc120a5289ece?w=632&amp;h=50&amp;f=png&amp;s=5680" alt="cmd-markdown-logo">
+以上，我们就完成了一个基于Promise A+规范的Promise</p> <h1 id="最后扩展"><a href="#最后扩展" class="header-anchor">#</a> 最后扩展</h1> <h2 id="源码地址"><a href="#源码地址" class="header-anchor">#</a> 源码地址</h2> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/shifengming/promise
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/page5/promise.html" class="prev">
+        promise
+      </a></span> <span class="next"><a href="/page5/题目.html">
+        题目
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3f0b164.js" defer></script><script src="/assets/js/2.284f78c8.js" defer></script><script src="/assets/js/34.a20acac1.js" defer></script>
+  </body>
+</html>

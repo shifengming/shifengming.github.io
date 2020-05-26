@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>axios的用法 | ming的个人网站</title>
+    <meta name="description" content="Welcome to come to my blog">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.70f2d267.css" as="style"><link rel="preload" href="/assets/js/app.f3f0b164.js" as="script"><link rel="preload" href="/assets/js/2.284f78c8.js" as="script"><link rel="preload" href="/assets/js/8.2805aa08.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bd6822.js"><link rel="prefetch" href="/assets/js/11.7be908fe.js"><link rel="prefetch" href="/assets/js/12.71222861.js"><link rel="prefetch" href="/assets/js/13.0e9f2f34.js"><link rel="prefetch" href="/assets/js/14.70e31408.js"><link rel="prefetch" href="/assets/js/15.8e83af5f.js"><link rel="prefetch" href="/assets/js/16.3f82f6aa.js"><link rel="prefetch" href="/assets/js/17.9c893c24.js"><link rel="prefetch" href="/assets/js/18.8ce12f88.js"><link rel="prefetch" href="/assets/js/19.4539c1e6.js"><link rel="prefetch" href="/assets/js/20.8d6b15a2.js"><link rel="prefetch" href="/assets/js/21.aa90be3e.js"><link rel="prefetch" href="/assets/js/22.0741e8cf.js"><link rel="prefetch" href="/assets/js/23.26e38199.js"><link rel="prefetch" href="/assets/js/24.437832b0.js"><link rel="prefetch" href="/assets/js/25.3ac7a3f9.js"><link rel="prefetch" href="/assets/js/26.f3036c64.js"><link rel="prefetch" href="/assets/js/27.85d3ca2e.js"><link rel="prefetch" href="/assets/js/28.f59e28e7.js"><link rel="prefetch" href="/assets/js/29.74627ca0.js"><link rel="prefetch" href="/assets/js/3.c17543fc.js"><link rel="prefetch" href="/assets/js/30.7b42eae2.js"><link rel="prefetch" href="/assets/js/31.9c88f4b6.js"><link rel="prefetch" href="/assets/js/32.3302434b.js"><link rel="prefetch" href="/assets/js/33.bd99df5c.js"><link rel="prefetch" href="/assets/js/34.a20acac1.js"><link rel="prefetch" href="/assets/js/35.d2d4f756.js"><link rel="prefetch" href="/assets/js/36.18286c43.js"><link rel="prefetch" href="/assets/js/37.84831a8a.js"><link rel="prefetch" href="/assets/js/38.ce143c7c.js"><link rel="prefetch" href="/assets/js/39.11e44bd7.js"><link rel="prefetch" href="/assets/js/4.24ba765a.js"><link rel="prefetch" href="/assets/js/40.cb8f8018.js"><link rel="prefetch" href="/assets/js/41.f6a28df9.js"><link rel="prefetch" href="/assets/js/42.fbd48b3c.js"><link rel="prefetch" href="/assets/js/43.131d6d97.js"><link rel="prefetch" href="/assets/js/44.2c119204.js"><link rel="prefetch" href="/assets/js/45.198a5b50.js"><link rel="prefetch" href="/assets/js/46.c2f0e139.js"><link rel="prefetch" href="/assets/js/47.71dfa535.js"><link rel="prefetch" href="/assets/js/48.cb8ad619.js"><link rel="prefetch" href="/assets/js/49.cbeee829.js"><link rel="prefetch" href="/assets/js/5.e87ba801.js"><link rel="prefetch" href="/assets/js/50.ff87b9b9.js"><link rel="prefetch" href="/assets/js/51.8943f310.js"><link rel="prefetch" href="/assets/js/52.f08a077e.js"><link rel="prefetch" href="/assets/js/53.5b096969.js"><link rel="prefetch" href="/assets/js/54.39e8487d.js"><link rel="prefetch" href="/assets/js/55.581e549d.js"><link rel="prefetch" href="/assets/js/56.d60cbfa0.js"><link rel="prefetch" href="/assets/js/6.b35a0751.js"><link rel="prefetch" href="/assets/js/7.aa04d747.js"><link rel="prefetch" href="/assets/js/9.2159abe2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.70f2d267.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ming的个人网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page11/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page11/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS3</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JQuery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Http请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Ajax</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/page11/原生JS的Ajax请求.html" class="sidebar-link">原生JS的Ajax请求</a></li><li><a href="/page11/axios的用法.html" class="active sidebar-link">axios的用法</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#安装axios" class="sidebar-link">安装axios</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#创建fetch-js文件，封装axios" class="sidebar-link">创建fetch.js文件，封装axios</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#创建api-js用于存放后台所有接口" class="sidebar-link">创建api.js用于存放后台所有接口</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#在app-vue里面使用" class="sidebar-link">在app.vue里面使用</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#通过v-for渲染到页面上" class="sidebar-link">通过v-for渲染到页面上</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#在login-vue里面调接口" class="sidebar-link">在login.vue里面调接口</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#设置跨域" class="sidebar-link">设置跨域</a></li><li class="sidebar-sub-header"><a href="/page11/axios的用法.html#实现页面跳转" class="sidebar-link">实现页面跳转</a></li></ul></li><li><a href="/page11/题目.html" class="sidebar-link">题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="axios的用法"><a href="#axios的用法" class="header-anchor">#</a> axios的用法</h1> <h2 id="安装axios"><a href="#安装axios" class="header-anchor">#</a> 安装axios</h2> <div class="language- extra-class"><pre class="language-text"><code>npm install axios -S
+</code></pre></div><h2 id="创建fetch-js文件，封装axios"><a href="#创建fetch-js文件，封装axios" class="header-anchor">#</a> 创建fetch.js文件，封装axios</h2> <div class="language- extra-class"><pre class="language-text"><code>import axios from 'axios';
+
+// 自动切换环境
+if(process.env.NODE_ENV == 'development') {
+    axios.defaults.baseURL = '/sso';//  本地开发环境
+} else if(process.env.NODE_ENV == 'debug') {
+    axios.defaults.baseURL = '/sso';  // 本地调试环境
+} else if(process.env.NODE_ENV == 'production') {
+    axios.defaults.baseURL = localStorage.getItem('domain'); // 线上环境
+}
+axios.defaults.baseURL ='https://api.apiopen.top'
+// 设置超时时间
+axios.defaults.timeout = 10000;
+
+// 设置请求头
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded';
+// axios.defaults.withCredentials=true; // 允许跨域
+
+// 对外请求接口 ===》export导出request方法
+export default function request({method, url, params}) {
+    if(method == 'GET') {
+        return get(url, params)
+    } else if(method == 'POST') {
+        return post(url, params)
+    }
+}
+
+// 封装对内的get请求
+function get(url, params) {
+    return new Promise((resolve, reject) =&gt; {
+        axios.get(url, params).then(res =&gt; {
+            resolve(res.data)
+        }).catch(err =&gt; {
+            reject(err)
+        })
+    })
+}
+
+// 封装对内的post请求
+function post(url, params) {
+    return new Promise((resolve, reject) =&gt; {
+        axios.post(url, JSON.stringify(params)).then(res =&gt; {
+            resolve(res.data)
+        }).catch(err =&gt; {
+            reject(err)
+        })
+    })
+}
+
+// 请求拦截（请求发出前处理请求）
+axios.interceptors.request.use(
+    config =&gt; {
+        if(localStorage.getItem('sessionId')) {
+            config.headers.sessionId = localStorage.getItem('sessionId')
+        }
+        return config
+    },
+    error =&gt; {
+        return Promise.error(error)
+    }
+)
+
+// 响应拦截器（处理响应数据）
+axios.interceptors.response.use(
+    response =&gt;{
+        if(response.status == 200) {
+            return Promise.resolve(response)
+        } else {
+            return Promise.reject(response)
+        }
+    },
+    error =&gt; {
+        return Promise.reject(error.response)
+    }
+)
+</code></pre></div><h2 id="创建api-js用于存放后台所有接口"><a href="#创建api-js用于存放后台所有接口" class="header-anchor">#</a> 创建api.js用于存放后台所有接口</h2> <div class="language- extra-class"><pre class="language-text"><code>// 我们以登录接口为例：
+import request from './fetch.js'; // 导入刚才封装的请求
+
+export function login(params) {
+	return request({
+		method: 'GET',
+		url: 'getJoke',
+		params: params
+	})
+}
+</code></pre></div><h2 id="在app-vue里面使用"><a href="#在app-vue里面使用" class="header-anchor">#</a> 在app.vue里面使用</h2> <p>当然也可以在别的位置使用，可能会涉及父子组件传递的问题</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;img alt=&quot;Vue logo&quot; src=&quot;./assets/logo.png&quot;&gt;
+    &lt;Login msg=&quot;Welcome to Your Vue.js App&quot;/&gt;
+    &lt;button&gt;登录&lt;/button&gt;
+    
+    &lt;el-table :data=&quot;list&quot; border stripe&gt;
+      &lt;el-table-column type=&quot;index&quot;&gt;&lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;姓名&quot; prop=&quot;name&quot;&gt;&lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;时间&quot; prop=&quot;passtime&quot;&gt;&lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;序号&quot; prop=&quot;sid&quot;&gt;&lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;内容&quot; prop=&quot;text&quot;&gt;&lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;时间&quot; prop=&quot;passtime&quot;&gt;&lt;/el-table-column&gt;
+   &lt;/el-table&gt;
+
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Login from './components/Login.vue'
+import { login } from './components/api'; // 导入刚才login方法
+
+export default {
+    data(){
+      return{
+        list:[]
+      }
+  },
+   created() {
+       this.login()
+   },
+  // name: 'App',
+ methods: {
+      login() {
+        this.name = []  // 初始化数据
+        login({
+              page: 1,
+              count: 2,
+              type: 'video'
+        }).then(res =&gt; {
+                console.log(res)
+                if (res.code == 200) {
+                  this.list = res.result;
+                } else {
+                  console.log('暂无该项数据')
+                }
+        })
+    }
+  },
+  components: {
+    Login
+  }
+}
+&lt;/script&gt;
+
+&lt;style lang=&quot;less&quot;&gt;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+&lt;/style&gt;
+</code></pre></div><p><img src="https://wx4.sinaimg.cn/mw690/0066LWykgy1ge9ajyydhbj30u705tjrr.jpg" alt=""></p> <p><img src="https://wx4.sinaimg.cn/mw690/0066LWykgy1ge9ajyst7yj30ng08xgmq.jpg" alt=""></p> <p><img src="https://wx2.sinaimg.cn/mw1024/0066LWykgy1ge9ajyt2xbj30jb0840tb.jpg" alt=""></p> <p><img src="https://wx2.sinaimg.cn/large/0066LWykgy1ge9ajyskr1j30iq0cy75h.jpg" alt=""></p> <h2 id="通过v-for渲染到页面上"><a href="#通过v-for渲染到页面上" class="header-anchor">#</a> 通过v-for渲染到页面上</h2> <p><img src="https://wx1.sinaimg.cn/large/0066LWykgy1ge9ajysf7ij30n308qq3x.jpg" alt=""></p> <p><img src="https://wx1.sinaimg.cn/large/0066LWykgy1ge9ajyt4ohj30zw0ib764.jpg" alt=""></p> <p>如果页面有id的值，key值也可以写成item.id</p> <p><img src="https://wx3.sinaimg.cn/large/0066LWykgy1ge9ajyrhwbj309y03mt8n.jpg" alt=""></p> <h2 id="在login-vue里面调接口"><a href="#在login-vue里面调接口" class="header-anchor">#</a> 在login.vue里面调接口</h2> <p>其实这个掉接口的方法和app.vue里面掉接口的方法差不多</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { login } from './api'; // 导入刚才login方法
+
+export default {
+  data(){
+    return{
+      list:[]
+    }
+  },
+   created() {
+       this.login()
+   },
+  methods: {
+      login() {
+        this.name = []  // 初始化数据
+        login({
+                page: 1,
+                count: 2,
+                type: 'video'
+        }).then(res =&gt; {
+                console.log(res)
+                if (res.code == 200) {
+                  this.list = res.result;
+                } else {
+                  console.log('暂无该项数据')
+              }
+        })
+    }
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+&lt;/style&gt;
+</code></pre></div><p><img src="https://wx3.sinaimg.cn/large/0066LWykgy1ge9ajyyl3lj31080isq4v.jpg" alt=""></p> <h2 id="设置跨域"><a href="#设置跨域" class="header-anchor">#</a> 设置跨域</h2> <p>注意：一般接口都是不允许跨域访问的，我们需要在webpack配置文件中设置跨域</p> <p>在config/index.js里加入：</p> <div class="language- extra-class"><pre class="language-text"><code>proxyTable: {
+      '/sso': {
+        target: 'http://192.168.0.225:22100',  // 通过本地服务器将你的请求转发到这个地址
+        changeOrigin: true,  // 设置这个参数可以避免跨域
+        pathRewrite: {
+          '^/sso': '/sso'
+        }
+      }
+    },
+</code></pre></div><h2 id="实现页面跳转"><a href="#实现页面跳转" class="header-anchor">#</a> 实现页面跳转</h2> <h3 id="query传参"><a href="#query传参" class="header-anchor">#</a> query传参</h3> <div class="language- extra-class"><pre class="language-text"><code>     //Login.vue
+     &lt;ul :data=&quot;list&quot;&gt;
+      &lt;li v-for=&quot;item in list&quot; :key=&quot;item.id&quot; @click=&quot;jump(item)&quot;&gt;
+          &lt;div&gt;{{item.name}}&lt;/div&gt;
+          &lt;div&gt;{{item.sid}}&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;  
+    
+    
+   //要把item的值传入下边才可以用，(这个jump是我定义的一个点击方法在上边写的)
+   jump(item){
+      console.log(item)
+      this.$router.push({
+        query:{
+          obj: item.name
+        }
+      })
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//content.vue
+&lt;template&gt;
+    &lt;div&gt;
+        111
+        &lt;span v-for=&quot;item in con&quot; :key=&quot;item.id&quot;&gt;{{item.name}}&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default{
+        props: ['con'],
+        created() {
+            console.log(this.$route.query)
+            console.log(this.$route)
+            console.log(this.$router)
+        }
+    }
+&lt;/script&gt;
+</code></pre></div><p><img src="https://wx4.sinaimg.cn/large/0066LWykgy1ge9ajz026bj30q80amwez.jpg" alt=""></p> <h3 id="params传参"><a href="#params传参" class="header-anchor">#</a> params传参</h3> <div class="language- extra-class"><pre class="language-text"><code>//Login.vue
+    &lt;ul :data=&quot;list&quot;&gt;
+      &lt;li v-for=&quot;item in list&quot; :key=&quot;item.id&quot; @click=&quot;jump(item)&quot;&gt;
+          &lt;div&gt;{{item.name}}&lt;/div&gt;
+          &lt;div&gt;{{item.sid}}&lt;/div&gt;
+      &lt;/li&gt;
+      
+      
+   jump(item){
+      console.log(item)
+      this.$router.push({
+        // path: &quot;./content&quot;,
+        name: &quot;content&quot;,
+        // query:{
+        //   obj: item.name
+        // },
+        params:{
+           name: item.name
+        }
+      })
+    }
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>//content.vue
+&lt;template&gt;
+    &lt;div&gt;
+        111
+        &lt;span v-for=&quot;item in con&quot; :key=&quot;item.id&quot;&gt;{{item.name}}&lt;/span&gt;
+        &lt;!-- &lt;el-table-column label=&quot;姓名&quot; prop=&quot;name&quot;&gt;&lt;/el-table-column&gt; --&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default{
+        props: ['con'],
+        created() {
+            console.log(this.$route.params.name)
+            console.log(this.$route)
+            console.log(this.$router)
+        }
+    }
+&lt;/script&gt;
+&lt;style&gt;
+
+&lt;/style&gt;
+</code></pre></div><p><img src="https://wx2.sinaimg.cn/large/0066LWykgy1ge9ajyyjnsj30qz0angm3.jpg" alt=""></p> <h3 id="params和query传参的区别"><a href="#params和query传参的区别" class="header-anchor">#</a> params和query传参的区别</h3> <ul><li>query方式的参数会在地址栏后显示出来</li> <li>params方式的参数不会在地址栏后显示出来</li> <li>query可以用name或path来引入</li> <li>params必需要用name来引入</li></ul> <div class="language- extra-class"><pre class="language-text"><code>接收参数都是类似的，分别是:this.$route.query.name和this.$route.params.name
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/page11/原生JS的Ajax请求.html" class="prev">
+        原生JS的Ajax请求
+      </a></span> <span class="next"><a href="/page11/题目.html">
+        题目
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3f0b164.js" defer></script><script src="/assets/js/2.284f78c8.js" defer></script><script src="/assets/js/8.2805aa08.js" defer></script>
+  </body>
+</html>

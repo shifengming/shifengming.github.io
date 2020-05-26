@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组件之间的通信 | ming的个人网站</title>
+    <meta name="description" content="Welcome to come to my blog">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.70f2d267.css" as="style"><link rel="preload" href="/assets/js/app.f3f0b164.js" as="script"><link rel="preload" href="/assets/js/2.284f78c8.js" as="script"><link rel="preload" href="/assets/js/43.131d6d97.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bd6822.js"><link rel="prefetch" href="/assets/js/11.7be908fe.js"><link rel="prefetch" href="/assets/js/12.71222861.js"><link rel="prefetch" href="/assets/js/13.0e9f2f34.js"><link rel="prefetch" href="/assets/js/14.70e31408.js"><link rel="prefetch" href="/assets/js/15.8e83af5f.js"><link rel="prefetch" href="/assets/js/16.3f82f6aa.js"><link rel="prefetch" href="/assets/js/17.9c893c24.js"><link rel="prefetch" href="/assets/js/18.8ce12f88.js"><link rel="prefetch" href="/assets/js/19.4539c1e6.js"><link rel="prefetch" href="/assets/js/20.8d6b15a2.js"><link rel="prefetch" href="/assets/js/21.aa90be3e.js"><link rel="prefetch" href="/assets/js/22.0741e8cf.js"><link rel="prefetch" href="/assets/js/23.26e38199.js"><link rel="prefetch" href="/assets/js/24.437832b0.js"><link rel="prefetch" href="/assets/js/25.3ac7a3f9.js"><link rel="prefetch" href="/assets/js/26.f3036c64.js"><link rel="prefetch" href="/assets/js/27.85d3ca2e.js"><link rel="prefetch" href="/assets/js/28.f59e28e7.js"><link rel="prefetch" href="/assets/js/29.74627ca0.js"><link rel="prefetch" href="/assets/js/3.c17543fc.js"><link rel="prefetch" href="/assets/js/30.7b42eae2.js"><link rel="prefetch" href="/assets/js/31.9c88f4b6.js"><link rel="prefetch" href="/assets/js/32.3302434b.js"><link rel="prefetch" href="/assets/js/33.bd99df5c.js"><link rel="prefetch" href="/assets/js/34.a20acac1.js"><link rel="prefetch" href="/assets/js/35.d2d4f756.js"><link rel="prefetch" href="/assets/js/36.18286c43.js"><link rel="prefetch" href="/assets/js/37.84831a8a.js"><link rel="prefetch" href="/assets/js/38.ce143c7c.js"><link rel="prefetch" href="/assets/js/39.11e44bd7.js"><link rel="prefetch" href="/assets/js/4.24ba765a.js"><link rel="prefetch" href="/assets/js/40.cb8f8018.js"><link rel="prefetch" href="/assets/js/41.f6a28df9.js"><link rel="prefetch" href="/assets/js/42.fbd48b3c.js"><link rel="prefetch" href="/assets/js/44.2c119204.js"><link rel="prefetch" href="/assets/js/45.198a5b50.js"><link rel="prefetch" href="/assets/js/46.c2f0e139.js"><link rel="prefetch" href="/assets/js/47.71dfa535.js"><link rel="prefetch" href="/assets/js/48.cb8ad619.js"><link rel="prefetch" href="/assets/js/49.cbeee829.js"><link rel="prefetch" href="/assets/js/5.e87ba801.js"><link rel="prefetch" href="/assets/js/50.ff87b9b9.js"><link rel="prefetch" href="/assets/js/51.8943f310.js"><link rel="prefetch" href="/assets/js/52.f08a077e.js"><link rel="prefetch" href="/assets/js/53.5b096969.js"><link rel="prefetch" href="/assets/js/54.39e8487d.js"><link rel="prefetch" href="/assets/js/55.581e549d.js"><link rel="prefetch" href="/assets/js/56.d60cbfa0.js"><link rel="prefetch" href="/assets/js/6.b35a0751.js"><link rel="prefetch" href="/assets/js/7.aa04d747.js"><link rel="prefetch" href="/assets/js/8.2805aa08.js"><link rel="prefetch" href="/assets/js/9.2159abe2.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.70f2d267.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">ming的个人网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page6/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/page6/page1/" class="nav-link">
+  前端技术
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="个人文章" class="dropdown-title"><span class="title">个人文章</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://segmentfault.com/u/helloxiaoming" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  segmentfault
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div></div> <a href="https://github.com/shifengming" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Github
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS3</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JQuery</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>ES6</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/page6/vue生命周期.html" class="sidebar-link">vue生命周期</a></li><li><a href="/page6/手写一个MVVM框架.html" class="sidebar-link">手写一个MVVM框架</a></li><li><a href="/page6/常用指令.html" class="sidebar-link">常用指令</a></li><li><a href="/page6/组件常用选项.html" class="sidebar-link">组件常用选项</a></li><li><a href="/page6/组件之间的通信.html" class="active sidebar-link">组件之间的通信</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#组件关系说明" class="sidebar-link">组件关系说明</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#方法一：props-emit" class="sidebar-link">方法一：props/$emit</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#方法二：-parent-children与ref" class="sidebar-link">方法二：$parent/$children与ref</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#emit-on" class="sidebar-link">$emit/$on</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#vuex" class="sidebar-link">Vuex</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#attrs-listeners" class="sidebar-link">$attrs/$listeners</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#provide-inject" class="sidebar-link">provide/inject</a></li><li class="sidebar-sub-header"><a href="/page6/组件之间的通信.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/page6/vuex的用法.html" class="sidebar-link">vuex的用法</a></li><li><a href="/page6/vue3.0新特性.html" class="sidebar-link">Vue3.0新特性</a></li><li><a href="/page6/题目.html" class="sidebar-link">题目</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>React</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Github</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Http请求</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Ajax</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>项目</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="组件之间的通信"><a href="#组件之间的通信" class="header-anchor">#</a> 组件之间的通信</h1> <h2 id="组件关系说明"><a href="#组件关系说明" class="header-anchor">#</a> 组件关系说明</h2> <p><img src="https://user-gold-cdn.xitu.io/2020/1/8/16f848eec6bf1920?w=664&amp;h=802&amp;f=jpeg&amp;s=37042" alt="cmd-markdown-logo"></p> <p>由上边的图可以看出以下几个关系：</p> <ul><li><p>A与B是父子关系</p></li> <li><p>A与C是父子关系</p></li> <li><p>B与D是父子关系</p></li> <li><p>B与E是父子关系</p></li> <li><p>B与C是兄弟关系</p></li> <li><p>D与E是堂兄关系</p></li> <li><p>A与D是隔代关系</p></li> <li><p>A与E是隔代关系</p></li></ul> <p>由上边几个关系对下边场景预览：</p> <ul><li>父子 组件之间的数据传递</li> <li>兄弟 组件之间的数据传递</li> <li>祖先组件 与 子组件 之间的数据传递</li></ul> <p>下面来为大家详细讲解实现这些关系的几种通信方式</p> <div class="language- extra-class"><pre class="language-text"><code>props/$emit
+
+$parent / $children与 ref
+
+$emit/$on
+
+vuex
+
+$attrs/$listeners
+
+provide/inject
+
+</code></pre></div><p>几种组件通信方法更好地选用</p> <div class="language- extra-class"><pre class="language-text"><code>当我们的项目比较大时，可以选择更好的状态管理解决方案vuex。
+
+节制地使用$parent和$children,它们的主要目的是作为访问组件的应急方法，
+更推荐用props和events实现父子组件通信
+
+如果仅仅是传递数据，就用$attrs/$listeners好点
+如何不仅传递数据，还做中间处理，就用vuex好些
+</code></pre></div><h2 id="方法一：props-emit"><a href="#方法一：props-emit" class="header-anchor">#</a> 方法一：props/$emit</h2> <ul><li>父组件A 向 子组件B 传递数据 通过props的方法</li> <li>子组件B 向 父组件A 发送数据 通过emit</li></ul> <h3 id="父组件向子组件传递数据"><a href="#父组件向子组件传递数据" class="header-anchor">#</a> 父组件向子组件传递数据</h3> <p>下面通过一个例子来看父组件是如何向子组件传递数据的：
+这个例子是子组件son.vue 通过 props 获取 父组件father.vue 中的数据：
+sonList: ['小白', '小红', '小蓝','小绿']</p> <ul><li>father父组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div class=&quot;father&quot;&gt;
+    &lt;com-son :sons=&quot;sonList&quot;&gt;&lt;/com-son&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import comSon from './son'
+export default {
+  name: 'HelloWorld',
+  components: { comSon },
+  data() {
+    return {
+      sonList: ['小白', '小红', '小蓝','小绿']
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件 son.vue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;span v-for=&quot;(item, index) in sons&quot; :key=&quot;index&quot;&gt;{{item}}&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: ['sons']
+}
+&lt;/script&gt;
+</code></pre></div><p><strong>注意：</strong></p> <p>props 只可以从上一级组件传递到下一级组件，也就是父子组件，即这就是单向数据流</p> <p>props是只读，不可以被修改，所有被修改都会失效和被警告</p> <h3 id="子组件向父组件传递数据"><a href="#子组件向父组件传递数据" class="header-anchor">#</a> 子组件向父组件传递数据</h3> <p>下面通过一个例子来看子组件是如何向父组件传递值：这个例子是子组件son.vue通过$emit向父组件值的传递</p> <ul><li>父组件father.vue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div class=&quot;father&quot;&gt;
+    &lt;com-son :sons=&quot;sonList&quot; @onEmitIndex=&quot;onEmitIndex&quot;&gt;&lt;/com-son&gt;
+    &lt;p&gt;{{currentIndex}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import comSon from './son'
+export default {
+  name: 'HelloWorld',
+  components: { comSon },
+  data() {
+    return {
+      currentIndex: -1,
+      sonList: ['小白', '小红', '小蓝','小绿']
+    }
+  },
+  methods:{
+    onEmitIndex(idx){
+      this.currentIndex = idx
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件son.vue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;span v-for=&quot;(item, index) in sons&quot; :key=&quot;index&quot; @click=&quot;emitIndex(index)&quot;&gt;{{item}}&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: ['sons'],
+  methods: {
+    emitIndex(index){
+      this.$emit('onEmitIndex',index)
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><h2 id="方法二：-parent-children与ref"><a href="#方法二：-parent-children与ref" class="header-anchor">#</a> 方法二：$parent/$children与ref</h2> <ul><li>子实例可以用this.$parent访问父实例</li> <li>子实例被推入父实例的$children</li> <li>ref：如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例</li></ul> <p>在这里我要说一下：</p> <div class="language- extra-class"><pre class="language-text"><code>节制地使用$parent和$children,它们的主要目的是作为访问组件的应急方法，
+
+更推荐用props和events实现父子组件通信
+</code></pre></div><p>下面我们来通过一个实例说明$parent和$children的用法：</p> <ul><li>父组件father.vue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div class=&quot;father&quot;&gt;
+    &lt;com-son&gt;&lt;/com-son&gt;
+    &lt;button @click=&quot;name&quot;&gt;点击改变子组件的值&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import comSon from './son'
+export default {
+  name: 'HelloWorld',
+  components: { comSon },
+  data() {
+    return {
+      msg: 'hello,早上好！'
+    }
+  },
+  methods:{
+    name(){
+      this.$children[0].message = &quot;hello&quot;
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件son.vue</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div class=&quot;com_a&quot;&gt;
+    &lt;span&gt;{{message}}&lt;/span&gt;
+    &lt;p&gt;获取父组件的值：{{parentVal}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data(){
+    return {
+      message:'Good wether'
+    }
+  },
+  computed:{
+    parentVal(){
+      return this.$parent.msg;
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>下边再说ref访问组件的例子：</p> <ul><li>子组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>export default {
+  data () {
+    return {
+      title: 'Vue.js'
+    }
+  },
+  methods: {
+    sayHello () {
+      window.alert('Hello');
+    }
+  }
+}
+</code></pre></div><ul><li>父组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;component-a ref=&quot;comA&quot;&gt;&lt;/component-a&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default {
+    mounted () {
+      const comA = this.$refs.comA;
+      console.log(comA.title);
+      comA.sayHello();
+    }
+  }
+&lt;/script&gt;
+</code></pre></div><p><strong>注意：</strong></p> <p>这两种方法的弊端，无法在跨域兄弟间通信</p> <h2 id="emit-on"><a href="#emit-on" class="header-anchor">#</a> $emit/$on</h2> <blockquote><p>这个方法可用于父子、隔代、兄弟组件通信</p></blockquote> <p>这种方式是通过一个类似App.vue的实例作为一个模块的事件中心，用它来触发事件和监听事件，从而实现任何组件间的通信，包括父子、隔代、兄弟组件</p> <p><strong>当项目比较大的时候，可以选择更好的状态管理解决方案vuex</strong></p> <p>下边我们来通过一个实例说明emit/on的用法：</p> <p>在这里先说一下：</p> <p>有两个组件A、B,在B组件中接收到A组件传过来的数据</p> <p>首先开辟个新的Vue根实例</p> <p>然后我们在A组件中通过$emit方式去定义一个自定义事件方法</p> <p>然后通过$on去接收A组件自定义的事件传过来的值</p> <ul><li>首先创建一个vue的空白实例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import Vue from 'vue'
+export default new Vue()
+</code></pre></div><ul><li>子组件A</li></ul> <div class="language- extra-class"><pre class="language-text"><code>把组件A通过$emit传到那个Vue空白实例里面
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;span&gt;A组件-&gt;{{msg}}&lt;/span&gt;
+        &lt;input type=&quot;button&quot; value=&quot;把a组件数据传给b&quot; @click =&quot;send&quot;&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import vmson from &quot;util/emptyVue&quot;
+export default {
+    data(){
+        return {
+            msg:{
+                a:'666',
+                b:'999'
+            }
+        }
+    },
+    methods:{
+        send:function(){
+            vmson.$emit(&quot;aevent&quot;,this.msg)
+        }
+    }
+}
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件B</li></ul> <div class="language- extra-class"><pre class="language-text"><code>组件B通过$on去监听vmson实例中的自定义方法aevent
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+ &lt;div&gt;
+    &lt;span&gt;{{msg}}&lt;/span&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+      import vmson from &quot;util/emptyVue&quot;
+      export default {
+         data(){
+                return {
+                    msg:&quot;&quot;
+                }
+            },
+         mounted(){
+                vmson.$on(&quot;aevent&quot;,(val)=&gt;{//监听aevent事件
+                    console.log(val);//打印出来结果
+                    this.msg = val;
+                })
+          }
+    }
+&lt;/script&gt;
+</code></pre></div><ul><li>父组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>这个父组件就是把A、B两个组件放在父组件中注册渲染
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+     &lt;div&gt;
+      &lt;childa&gt;&lt;/childa&gt;
+      &lt;childb&gt;&lt;/childb&gt;    
+     &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+   import childa from './childa.vue';
+   import childb from './childb.vue';
+   export default {
+    components:{
+        childa,
+        childb
+    },
+    data(){
+        return {
+            msg:&quot;&quot;
+        }
+    },
+    methods:{
+       
+    }
+   }
+&lt;/script&gt;
+</code></pre></div><h2 id="vuex"><a href="#vuex" class="header-anchor">#</a> Vuex</h2> <h3 id="vuex是什么？"><a href="#vuex是什么？" class="header-anchor">#</a> Vuex是什么？</h3> <p>Vuex是一个专为Vue.js应用程序开发的状态管理模式，它解决了组件之间同一状态的共享问题，它采用集中式存储管理应用的所有组件的状态，所以组件就可以和stort通讯了，其实Vuex就是用来管理组件之间通信的一个组件</p> <h3 id="为什么要使用vuex"><a href="#为什么要使用vuex" class="header-anchor">#</a> 为什么要使用Vuex?</h3> <p><strong>假如不使用vuex</strong></p> <ul><li><p>父子组件依赖同一个state
+<img src="https://user-gold-cdn.xitu.io/2020/1/9/16f88da789ee216f?w=1920&amp;h=1080&amp;f=png&amp;s=108372" alt="cmd-markdown-logo"></p></li> <li><p>兄弟组件依赖同一个state
+<img src="https://user-gold-cdn.xitu.io/2020/1/9/16f88db226691d51?w=1920&amp;h=1080&amp;f=png&amp;s=80106" alt="cmd-markdown-logo"></p></li></ul> <p><strong>用了Vuex之后</strong> <img src="https://user-gold-cdn.xitu.io/2020/1/9/16f88dbd6d0591e9?w=1920&amp;h=1080&amp;f=png&amp;s=131897" alt="cmd-markdown-logo"></p> <h3 id="vuex各个模块"><a href="#vuex各个模块" class="header-anchor">#</a> Vuex各个模块</h3> <p><strong>state</strong></p> <div class="language- extra-class"><pre class="language-text"><code>state中存放页面共享的状态字段
+</code></pre></div><p><strong>getters</strong></p> <div class="language- extra-class"><pre class="language-text"><code>相当于当前模块state的计算属性
+</code></pre></div><p><strong>mutations</strong></p> <div class="language- extra-class"><pre class="language-text"><code>如果想更新state中的字段，提交mutations中定义的事件的唯一的方式
+(key为事件名，value是一个函数)，但是中国事件函数必须是同步执行的
+</code></pre></div><p><strong>actions</strong></p> <div class="language- extra-class"><pre class="language-text"><code>可以定义异步函数，并在回调中提交mutation,就相当于异步更新了state中的字段
+</code></pre></div><p><strong>modules</strong></p> <div class="language- extra-class"><pre class="language-text"><code>类似于命名空间，用于项目中将各个模块的状态分开定义和操作，便于维护
+</code></pre></div><h3 id="vuex实例应用"><a href="#vuex实例应用" class="header-anchor">#</a> Vuex实例应用</h3> <ul><li>父组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;ChildA/&gt;
+    &lt;ChildB/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  import ChildA from 'components/ChildA'
+  import ChildB from 'components/ChildB'
+
+  export default {
+    name: 'App',
+    components: {ChildA, ChildB}
+  }
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件ChildA</li></ul> <div class="language- extra-class"><pre class="language-text"><code> &lt;template&gt;
+  &lt;div id=&quot;childA&quot;&gt;
+    &lt;h1&gt;我是A组件&lt;/h1&gt;
+    &lt;button @click=&quot;transform&quot;&gt;点我让B组件接收到数据&lt;/button&gt;
+    &lt;p&gt;{BMessage}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        AMessage: 'Hello，B组件，我是A组件'
+      }
+    },
+    computed: {
+      BMessage() {
+        return this.$store.state.BMsg
+      }
+    },
+    methods: {
+      transform() {
+        this.$store.commit('receiveAMsg', {
+          AMsg: this.AMessage
+        })
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre></div><ul><li>子组件ChildB</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;div id=&quot;childB&quot;&gt;
+    &lt;h1&gt;我是B组件&lt;/h1&gt;
+    &lt;button @click=&quot;transform&quot;&gt;点我看A组件接收的数据&lt;/button&gt;
+    &lt;p&gt;{{AMessage}}&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        BMessage: 'Hello，A组件，我是B组件'
+      }
+    },
+    computed: {
+      AMessage() {
+        return this.$store.state.AMsg
+      }
+    },
+    methods: {
+      transform() {
+        this.$store.commit('receiveBMsg', {
+          BMsg: this.BMessage
+        })
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre></div><ul><li>vuex模块store.js</li></ul> <div class="language- extra-class"><pre class="language-text"><code>import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const state = {
+  // 初始化A和B组件的数据，等待获取
+  AMsg: '',
+  BMsg: ''
+}
+
+const mutations = {
+  receiveAMsg(state, payload) {
+    state.AMsg = payload.AMsg
+  },
+  receiveBMsg(state, payload) {
+    state.BMsg = payload.BMsg
+  }
+}
+
+export default new Vuex.Store({
+  state,
+  mutations
+})
+</code></pre></div><h2 id="attrs-listeners"><a href="#attrs-listeners" class="header-anchor">#</a> $attrs/$listeners</h2> <blockquote><p>用在父组件传递数据给子组件或者孙组件</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>如果仅仅是传递数据，就用$attrs/$listeners好点
+
+如何不仅传递数据，还做中间处理，就用vuex好些
+</code></pre></div><p><strong>$attrs：</strong></p> <p>$attrs继承所有的父组件属性（除了prop传递的属性、class和style）</p> <p>当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 ( class 和 style 除外 )，并且可以通过 v-bind=&quot;$attrs&quot; 传入内部组件。通常配合 inheritAttrs 选项一起使用。</p> <p><strong>$listeners：</strong></p> <p>它是一个对象，包含了父作用域中的v-on事件监听器，可以配合v-on=&quot;$listeners&quot;将所有的事件监听器指向这个组件的某个特定的子元素</p> <p>下面我们来通过一个实例看$attrs/$listeners的用法：</p> <p>例：假设有三个组件：A组件包含B组件，B组件包含C组件</p> <ul><li>A组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;child1 :p-child1=&quot;child1&quot; :p-child2=&quot;child2&quot; v-on:test1=&quot;onTest1&quot; 
+        v-on:test2=&quot;onTest2&quot;
+        //此处监听了两个事件，可以在B组件或者C组件中直接触发
+        &gt;
+        &lt;/child1&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Child1 from './Child1.vue';
+export default {
+    data() {
+        return {};
+    },
+    components: { Child1 },
+    methods: {
+        onTest1() {
+            console.log('test1 running...');
+        },
+        onTest2() {
+            console.log('test2 running');
+        }
+    }
+};
+&lt;/script&gt;
+</code></pre></div><ul><li>B组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div class=&quot;child-1&quot;&gt;
+        &lt;p&gt;in child1:&lt;/p&gt;
+        &lt;p&gt;props: {{pChild1}}&lt;/p&gt;
+        &lt;p&gt;$attrs: {{$attrs}}&lt;/p&gt;
+        &lt;hr&gt;
+        &lt;child2 v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/child2&gt;
+            //v-on绑定了$listeners，所以C组件能直接触发test
+            //v-bind绑定了$attrs，所以C组件可以获取A组件传递下来的props的值
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Child2 from './Child2.vue';
+export default {
+    props: ['pChild1'],
+    data() {
+        return {};
+    },
+    inheritAttrs: false,
+    components: { Child2 },
+    mounted() {
+        this.$emit('test1');
+    }
+};
+&lt;/script&gt;
+</code></pre></div><ul><li>C组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div class=&quot;child-2&quot;&gt;
+        &lt;p&gt;in child2:&lt;/p&gt;
+        &lt;p&gt;props: {{pChild2}}&lt;/p&gt;
+        &lt;p&gt;$attrs: {{$attrs}}&lt;/p&gt;
+        &lt;hr&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+    props: ['pChild2'],
+    data() {
+        return {};
+    },
+    inheritAttrs: false,
+    mounted() {
+        this.$emit('test2');
+    }
+};
+&lt;/script&gt;
+</code></pre></div><h2 id="provide-inject"><a href="#provide-inject" class="header-anchor">#</a> provide/inject</h2> <p>祖先组件中通过provider来提供变量，然后在孙组件中通过inject来注入变量</p> <p>procide/inject API主要解决了跨域组件间的通讯问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系</p> <p>下边通过一个例子来说明provide/inject的用法：</p> <ul><li>父组件</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        &lt;son prop=&quot;data&quot;&gt;&lt;/son&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+export default {
+    provide: {
+        name: 'Tom'
+    }
+}
+</code></pre></div><ul><li>孙子组件</li></ul> <blockquote><p>这里的孙子组件指的是：父组件、子组件、孙子组件</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;
+        {{name}}
+    &lt;/div&gt;
+&lt;/template&gt;
+ 
+&lt;script&gt;
+export default {
+    name: 'grandson',
+    inject: [name]
+}
+&lt;/script&gt;
+</code></pre></div><p>这里可以通过inject直接访问其两个层次以上的数据，</p> <p>用法与props完全相同</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p><strong>vue组件间的通讯大致可以分为三类</strong></p> <h3 id="父子通讯"><a href="#父子通讯" class="header-anchor">#</a> 父子通讯</h3> <p><strong>props/emit、parent/children、 attrs/$listeners、provide/inject API、ref</strong></p> <div class="language- extra-class"><pre class="language-text"><code>父向子传递数据通过props
+
+子向父传递是通过$emit、event
+
+子实例访问父实例通过$parent
+
+父实例访问子实例通过$children
+
+$attrs用父组件传递数据给子组件或孙组件
+(包含了父作用域中不作为 prop 被识别 (且获取) 的特性绑定 (class 和 style 除外))
+
+listeners用父组件传递数据给子组件或孙组件
+包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器
+
+祖先组件通过provider提供变量给子孙组件
+
+子孙组件通过inject注入变量给祖先组件
+
+ref用来访问组件实例
+</code></pre></div><h3 id="兄弟通信"><a href="#兄弟通信" class="header-anchor">#</a> 兄弟通信</h3> <p><strong>Vuex</strong></p> <div class="language- extra-class"><pre class="language-text"><code>vuex用来作为兄弟之间和跨级之间的通信
+</code></pre></div><h3 id="跨级通信"><a href="#跨级通信" class="header-anchor">#</a> 跨级通信</h3> <p><strong>Vuex、attrs/listeners、provide/inject API</strong></p> <div class="language- extra-class"><pre class="language-text"><code>vuex用来作为兄弟之间和跨级之间的通信
+
+$attrs用父组件传递数据给子组件或孙组件
+(包含了父作用域中不作为 prop 被识别 (且获取) 的特性绑定 (class 和 style 除外))
+
+listeners用父组件传递数据给子组件或孙组件
+包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器
+
+祖先组件通过provider提供变量给子孙组件
+
+子孙组件通过inject注入变量给祖先组件
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/page6/组件常用选项.html" class="prev">
+        组件常用选项
+      </a></span> <span class="next"><a href="/page6/vuex的用法.html">
+        vuex的用法
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f3f0b164.js" defer></script><script src="/assets/js/2.284f78c8.js" defer></script><script src="/assets/js/43.131d6d97.js" defer></script>
+  </body>
+</html>
